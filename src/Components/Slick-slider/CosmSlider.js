@@ -8,7 +8,7 @@ import Img from "gatsby-image"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import BeautyShaper from "../../images/devices/Kosmetologia/Beauty_shaper.jpg"
+import BeautyShaper from "../../images/devices/Kosmetologia/beauty_shaper.jpg"
 import CaviShaoer from "../../images/devices/Kosmetologia/cavi_shape1.jpg"
 import Hifu from "../../images/devices/Kosmetologia/hifu.jpg"
 import Lipolaser from "../../images/devices/Kosmetologia/lipolaser.jpg"
