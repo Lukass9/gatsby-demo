@@ -1,0 +1,51 @@
+{
+  "name": "studio-figura-trzebnicka",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Studio Figura Trzebnicka",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@fortawesome/free-brands-svg-icons": "^5.15.2",
+    "@fortawesome/free-regular-svg-icons": "^5.15.2",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "@iconify/icons-fa-solid": "^1.1.1",
+    "@iconify/react": "^1.1.4",
+    "babel-plugin-styled-components": "^1.12.0",
+    "gatsby": "^2.32.3",
+    "gatsby-background-image": "^1.5.0",
+    "gatsby-image": "^2.11.0",
+    "gatsby-plugin-fontawesome-css": "^1.0.0",
+    "gatsby-plugin-google-fonts": "^1.0.1",
+    "gatsby-plugin-sharp": "^2.14.3",
+    "gatsby-plugin-styled-components": "^3.9.0",
+    "gatsby-source-filesystem": "^2.11.1",
+    "gatsby-transformer-sharp": "^2.12.0",
+    "google-maps-react": "^2.0.6",
+    "gsap": "^3.6.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-google-maps": "^9.4.5",
+    "react-slick": "^0.28.1",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^5.2.1",
+    "typeface-cormorant-upright": "^1.1.13"
+  },
+  "devDependencies": {
+    "@iconify/icons-entypo": "^1.1.0",
+    "gh-pages": "^3.1.0"
+  }
+  
+}
+
