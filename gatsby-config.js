@@ -12,6 +12,14 @@ module.exports = {
         path: `${__dirname}/src/images/`,
       },
     },
+    {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        offset: -50,
+        display: 1000
+      }
+    },
+    `gatsby-plugin-smoothscroll`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
 
@@ -27,6 +35,7 @@ module.exports = {
         display: 'swap'
       }
     },
+    
   ],
   
   pathPrefix: "/gatsby-demo",

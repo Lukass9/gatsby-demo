@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+
 import { Link } from "gatsby"
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 import Logo from "../../images/log_bez_tla_biale.png"
 // import { theme } from "../../utils/theme";
@@ -261,12 +263,12 @@ function Menu () {
                     <Li as={Link} to="/StacjeZabiegowe" >Stacje zabiegowe</Li>
                         <Li onClick={() => setsubIsOpen(!subIsOpen) }>Cennik <Triangle rotate = {subIsOpen}/></Li>
                         <SubMenu openSubMenu = {subIsOpen}>
-                            <SubLi as={Link} to="/Cennik">Stacje fitness & wellness</SubLi>
-                            <SubLi>Kosmetologia</SubLi>
+                            <AnchorLink to="/Cennik#scroll_fitwell" stripHash><SubLi>Stacje fitness & wellness</SubLi></AnchorLink>
+                            <AnchorLink to="/Cennik#scroll_cosm" stripHash> <SubLi>Kosmetologia</SubLi> </AnchorLink>
                             <Hr/>
-                            <SubLi>Pakiety</SubLi>
+                            <AnchorLink to="/Cennik#scroll_pack" stripHash><SubLi>Pakiety</SubLi></AnchorLink>
                             <Hr/>
-                            <SubLi>Kosmetyki i suplementy</SubLi>
+                            <AnchorLink to="/Cennik#scroll_sup" stripHash><SubLi>Kosmetyki i suplementy</SubLi></AnchorLink>
                         </SubMenu>
                     <Li>Promocje</Li>
                     <Li>Wspomnienia ;)</Li>

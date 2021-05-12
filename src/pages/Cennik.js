@@ -128,23 +128,23 @@ const Cennik = ({ data }) => (
 
   <Layout>
     <CennikBg />
-    <H1>Stacje fitness & wellness</H1>
+    <H1 id = "scroll_fitwell">Stacje fitness & wellness</H1>
     <WrappSlider>
       <Wrap>
         <FitnessSlider />
       </Wrap>
     </WrappSlider>
 
-    <H1>Kosmetologia</H1>
+    <H1 id = "scroll_cosm">Kosmetologia</H1>
     <WrappSlider>
       <Wrap>
         <CosmSlider />
       </Wrap>
     </WrappSlider>
 
-    <H1>Pakiety</H1>
+    <H1 id = "scroll_pack">Pakiety</H1>
 
-    <H1>Suplementy</H1>
+    <H1 id = "scroll_sup">Kosmetyki i suplementy</H1>
     <WrappCircle>
       <Circle>
         <Img fluid={data.Jeczmien.childImageSharp.fluid} ale="Jeczmien" />

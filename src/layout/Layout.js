@@ -33,7 +33,9 @@ const Wrapper = styled.div `
   overflow: hidden;
 `
 
-const Layout = ({children}) => (
+const Layout = ({children}) => {
+  
+  return(
     <ThemeProvider theme = {theme}>
       <>
           <GlobalStyle/>
@@ -51,5 +53,5 @@ const Layout = ({children}) => (
       </>
     </ThemeProvider>
 )
-
+}
 export default Layout
