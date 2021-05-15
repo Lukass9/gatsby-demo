@@ -31,6 +31,9 @@ module.exports = {
         fonts: [
           `Raleway\:300,400,400i,500,600`,
           `DotGothic16`,
+          `Newsreader\:200,400,400i`,
+          `Alegreya`,
+          `Caveat`,
         ],
         display: 'swap'
       }

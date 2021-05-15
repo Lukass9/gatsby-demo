@@ -58,7 +58,7 @@ ${({ theme }) => theme.media.tablet}{
     & > p{
         width: auto;
         padding-top: 2vw;
-        font-size: 1.2vw;
+        font-size: 1.6vw;
     }
 }
 `

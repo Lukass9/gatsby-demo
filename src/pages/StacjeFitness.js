@@ -35,9 +35,13 @@ const DescribeDevice = styled.div `
 `
 
 const H2 = styled.h2 ` 
-    font-size: 1.5rem;
+    font-size: 6vw;
     font-weight: 500;
     color: #e67817;
+
+    ${({theme}) => theme.media.desktop}{
+      font-size: 1.4vw;
+    }
 `
 const H2Right = styled(H2) ` 
   text-align: end;
@@ -45,27 +49,37 @@ const H2Right = styled(H2) `
 const GatsbyImg = styled(Img) ` 
   border-radius: 50%;
   float: left;
-  shape-outside: ellipse(150px 100px at 50% 50%);
+  /* shape-outside: ellipse(150px 100px at 50% 50%); */
+  shape-outside: ellipse(160px 150px at 35% 30%);
+  transform: scale(.9) translateX(-10vw);
   transition: transform 0.5s;
   
   ${({theme}) => theme.media.tablet}{
+    /* shape-outside: ellipse(150px 100px at 50% 50%); */
+    shape-outside: none;
+    transform: scale(1) translateX(0px);
     ${DescribeDevice}:hover &{
       transform: scale(1.2)  translateX(-25px);
     }
   }
 
+  z-index: 0;
  
 `
 const GatsbyImgRight = styled(GatsbyImg) ` 
   float: right;
+  transform: translateX(10vw);
 
+  shape-outside: ellipse(150px 150px at 55% 50%);
 
   ${({theme}) => theme.media.tablet}{
+    /* shape-outside: ellipse(150px 100px at 50% 50%); */
+    shape-outside: none;
+    transform: scale(1) translateX(0px);
     ${DescribeDevice}:hover &{
       transform: scale(1.2)  translateX(25px);
     }
   }
-
 
 `
 // const ImgSwan = styled(GatsbyImg) ` 
@@ -78,6 +92,7 @@ const GatsbyImgRight = styled(GatsbyImg) `
 const P = styled.p ` 
   padding: 0px 20px;
   text-align: justify;
+  z-index: 5;
 `
 
 const Wrapp = styled.div ` 

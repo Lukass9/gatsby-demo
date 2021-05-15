@@ -65,8 +65,7 @@ const Li = styled.li `
     ::before{
         width: 100%;
     }
-
-  }
+}
 
   ${({theme}) => theme.media.desktop} {
     margin-left: 40px
@@ -97,13 +96,13 @@ const Ul = styled.ul `
 `
 
 const SubMenu = styled.ul ` 
-    display: flex;
+    /* display: flex; */
     list-style-type: none;
     padding:0;
     flex-flow: column;
     background-color: white;
     border-radius: 15px;
-    width: 400px;
+    width: 70vw;
     color: black;
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
     overflow: hidden;
@@ -119,6 +118,7 @@ const SubMenu = styled.ul `
 
     ${({theme}) => theme.media.desktop} {
         position: absolute;
+        width: 400px;
         top: 50px;
         left: 515px;
     }
@@ -127,17 +127,18 @@ const SubMenu = styled.ul `
 
 const SubLi = styled.li `  
     position: relative;
+    text-decoration: none;
     margin: 5px;
     padding: 5px;
     border-radius: 5px;
     transition: background-color .2s;
+     /* text-align: center; */
     
 :hover{
     background-color: #CC3300;
     color: white;
     cursor: pointer;
 }
-
 `
 
 const WrapperMenu = styled.div ` 
@@ -239,7 +240,10 @@ const Triangle = styled.div `
     transform: ${({rotate}) => rotate? "rotate(0deg)" : "rotate(180deg)"};
     transition: transform .3s;
 `
-
+const AnchorLinkWithoutDecoration = styled(AnchorLink)` 
+    text-decoration: none;
+    color: black;
+`
 function Menu () {
 
     const [isOpen, setIsOpen] = useState(false);
@@ -259,16 +263,16 @@ function Menu () {
                     </WrapperHamburger>
                 </WrapperMenu>
                 <Ul showMenu = {isOpen}>
-                    <Li as={Link} to="/">Koncept SF</Li>
-                    <Li as={Link} to="/StacjeZabiegowe" >Stacje zabiegowe</Li>
+                    <Li as={Link} to="/"  activeStyle={{opacity: 1,}}> Koncept SF</Li>
+                    <Li as={Link} to="/StacjeZabiegowe" activeStyle={{opacity: 1,}}>Stacje zabiegowe</Li>
                         <Li onClick={() => setsubIsOpen(!subIsOpen) }>Cennik <Triangle rotate = {subIsOpen}/></Li>
                         <SubMenu openSubMenu = {subIsOpen}>
-                            <AnchorLink to="/Cennik#scroll_fitwell" stripHash><SubLi>Stacje fitness & wellness</SubLi></AnchorLink>
-                            <AnchorLink to="/Cennik#scroll_cosm" stripHash> <SubLi>Kosmetologia</SubLi> </AnchorLink>
+                            <AnchorLinkWithoutDecoration to="/Cennik#scroll_fitwell" stripHash><SubLi>Stacje fitness & wellness</SubLi></AnchorLinkWithoutDecoration>
+                            <AnchorLinkWithoutDecoration to="/Cennik#scroll_cosm" stripHash> <SubLi>Kosmetologia</SubLi> </AnchorLinkWithoutDecoration>
                             <Hr/>
-                            <AnchorLink to="/Cennik#scroll_pack" stripHash><SubLi>Pakiety</SubLi></AnchorLink>
+                            <AnchorLinkWithoutDecoration to="/Cennik#scroll_pack" stripHash><SubLi>Pakiety</SubLi></AnchorLinkWithoutDecoration>
                             <Hr/>
-                            <AnchorLink to="/Cennik#scroll_sup" stripHash><SubLi>Kosmetyki i suplementy</SubLi></AnchorLink>
+                            <AnchorLinkWithoutDecoration to="/Cennik#scroll_sup" stripHash><SubLi>Kosmetyki i suplementy</SubLi></AnchorLinkWithoutDecoration>
                         </SubMenu>
                     <Li>Promocje</Li>
                     <Li>Wspomnienia ;)</Li>

@@ -49,8 +49,8 @@ const ShowSubtitle = keyframes `
 `
 
 const H1Title = styled.h1` 
-font-family: Antic Slab;
-font-size: 6.5vw;
+font-family: Newsreader;
+font-size: 6.2vw;
 font-weight: 400;
 letter-spacing: 0.1em;
 text-align: center;
@@ -62,6 +62,7 @@ text-shadow: -2px 5px 9px #00000040;
 animation: ${ShowTitle} 1s .5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 
 ${({theme})=> theme.media.desktop}{
+  font-family: Antic Slab;
   font-size: 3.5vw;
   white-space: nowrap;
 
@@ -71,15 +72,15 @@ ${({theme})=> theme.media.desktop}{
 
 `
 const H2Title = styled.h2` 
-  font-family: Arabic Typesetting;
-  font-size: 4.5vw;
-  font-weight: 400;
+  font-family: Alegreya;
+  font-size: 4vw;
+  font-weight: 200;
   color: #E67817;
 
   animation: ${ShowSubtitle} 2s 1.5s ease-out both;
 
 ${({theme})=> theme.media.desktop}{
-  font-size: 2.5vw;
+  font-size: 2vw;
   width: 75%;
   text-align: right;
   margin-top: 0px;

@@ -68,11 +68,11 @@ const AboutUs = () => {
     //   // markers: true,
     //  }})
 
-     gsap.fromTo(".buttonAboutUs", {y: -50, opacity: 0, }, 
+     gsap.fromTo(".buttonAboutUs", {y: -20, opacity: 0, }, 
      {y: 0, opacity: 1, duration: 1, stagger: .3, ease: "power3.InOut", scrollTrigger:{
        trigger: ".buttonAboutUs",
        start: 'top 60%',
-       toggleActions: "play complete reverse reset"
+      //  toggleActions: "play complete reverse reset"
       // markers: true,
      }})
    
