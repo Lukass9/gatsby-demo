@@ -52,8 +52,10 @@ const H1 = styled.h1 `
 const Result = styled.div ` 
     position: absolute;
 
-    padding: 20px;
-    width: 130px;
+    /* padding: 20px; */
+    padding: 20.2px;
+    /* width: 130px; */
+    width: 40%;
     border-radius: 0 8px 8px 0;
     background-color: #e67817;
 
@@ -66,21 +68,25 @@ const Result = styled.div `
         display: block;
         position: absolute;
         background-color: #e67817;
-        width: 272px;
+        /* width: 272px; */
+        width: 152%;
         height: 59px;
         top: 0px;
         left: 0px;
-        transform: translateX(-270px);
+        /* transform: translateX(-270px); */
+        transform: translateX(-99%);
         transition: transform 0.25s ease;
         z-index: 1;
     }
 
     &:hover{
-        transform: translateX(270px);
+        /* transform: translateX(270px); */
+        transform: translateX(150%);
         border-radius: 0 10px 0 0;
 
         & + div{
-            transform: translateX(-200px);
+            /* transform: translateX(-200px); */
+            transform: translateX(-100%);
 
             & + ul{
             opacity: 1;
@@ -88,6 +94,18 @@ const Result = styled.div `
             }
         }
     }
+
+    @media (min-width: 768px){
+        width: 130px;
+        ::before{
+            width: 272px;
+            transform: translateX(-270px);
+        }
+        &:hover{
+            transform: translateX(270px)
+        }
+    }
+    
 `
 
 const ResolutDescription = styled.ul ` 
@@ -99,20 +117,29 @@ const ResolutDescription = styled.ul `
 	color: #ffffff;
     top: 43px;
 	left: 0px;
-	width: 400px;
+	/* width: 400px; */
+    width: 100%;
 	border-radius: 0 0 10px 0;
     z-index: 1;
 
     opacity: 0;
-    transform: translateX(-270px);
+    /* transform: translateX(-270px); */
+    transform: translateX(-60%);
+
+    @media (min-width: 768px){
+        width: 400px; 
+        transform: translateX(-270px);
+    }
 `
 
 
 const Benefit = styled.div ` 
     position: absolute;
     top: 62px;
-    padding: 20px;
-    width: 130px;
+    /* padding: 20px; */
+    padding: 20.2px;
+    /* width: 130px; */
+    width: 40%;
     border-radius: 0 8px 8px 0;
     background-color: #F39C12;
     z-index: 20;
@@ -123,18 +150,20 @@ const Benefit = styled.div `
         display: block;
         position: absolute;
         background-color: #F39C12;
-        width: 272px;
+        /* width: 272px; */
+        width: 152%;
         height: 59px;
         top: 0px;
         left: 0px;
-        transform: translateX(-270px);
+        /* transform: translateX(-270px); */
+        transform: translateX(-99%);
         transition: transform 0.25s ease;
         z-index: 1;
     }
 
-
     :hover{
-        transform: translateX(270px);
+        /* transform: translateX(270px); */
+        transform: translateX(150%);
         border-radius: 0 10px 0 0;
         /* ::before{
             transform: scaleX(3); 
@@ -144,6 +173,17 @@ const Benefit = styled.div `
             opacity: 1;
             transform: translateX(0px);
             }
+        }
+    }
+
+    @media (min-width: 768px){
+        width: 130px;
+        ::before{
+            width: 272px;
+            transform: translateX(-270px);
+        }
+        &:hover{
+            transform: translateX(270px)
         }
     }
 `;

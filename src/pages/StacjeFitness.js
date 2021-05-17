@@ -405,7 +405,7 @@ query {
     }
   }
 
-  Sauna: file(relativePath: { eq: "devices/wellness/sauna.jpg" }) {
+  Sauna: file(relativePath: { eq: "devices/wellness/sauna1.jpg" }) {
     childImageSharp {
         fixed(height:200, width:300, quality: 70){
         ...GatsbyImageSharpFixed

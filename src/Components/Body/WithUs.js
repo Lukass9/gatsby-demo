@@ -25,7 +25,7 @@ const Wrapp = styled.section`
 `
 const H1HeaderSticky = styled.h1`  
   position: absolute;
-  top: -2.2%;
+  top: -2.6%;
 
   width: 100%;
   text-align: center;
