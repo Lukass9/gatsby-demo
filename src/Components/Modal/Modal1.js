@@ -26,7 +26,8 @@ const WindowModal = styled.div `
     position: absolute;
     display: flex;
     flex-flow: column;
-    overflow: hidden;
+    /* overflow: hidden; */
+    overflow: scroll;
     
     width: 90vw;
     height: 80vh;
@@ -37,6 +38,7 @@ const WindowModal = styled.div `
     @media (min-width: 768px) {
         height: 95vh;
         width: 50vw;
+        overflow: hidden;
     }
 `
 
