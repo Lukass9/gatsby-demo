@@ -118,9 +118,9 @@ const Ellipse = styled.button `
 	box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
     z-index: 1;
 
-:focus{
+/* :focus{
     animation: ${flipVerticalFwd} 0.8s both;
-  }
+  } */
 `
 const Ellipse1 = styled(Ellipse) `
     width: 14vw;

@@ -14,35 +14,21 @@ const StyledMenu = styled.div `
     flex-flow: column;
     justify-content: center;
     width: 100%;
-    height: 50px;
 
-    /* background: linear-gradient(to bottom, rgba(204,51,0,1) 0%,rgba(205,52,0,1) 2%,rgba(255,103,15,0.8) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc3300', endColorstr='#ccff670f',GradientType=0 ); */
+    background: linear-gradient(to bottom, rgba(204,51,0,1) 0%,rgba(205,52,0,1) 2%,rgba(255,103,15,0.8) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc3300', endColorstr='#ccff670f',GradientType=0 );
 
     z-index: 9999;
 `
 
 const Wrapp = styled.div ` 
-    position: absolute;
-    top: 0px;
-    width: 100%;
-    height: 50px;
     display: flex;
     flex-flow: column;
     overflow: hidden;
-
-    background: linear-gradient(to bottom, rgba(204,51,0,1) 0%,rgba(205,52,0,1) 2%,rgba(255,103,15,0.8) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc3300', endColorstr='#ccff670f',GradientType=0 );
-
     height: ${(props)=> props.IsOpen ? parseInt("400") + (props.SubIsOpen ? parseInt("188") : parseInt("0") ) + "px"  : "50px" };
     transition: height .3s ease-out;
-
-    /* :focus{
-        height:400px;
-    } */
   
     ${({theme}) => theme.media.desktop}{
-        position: static;
         height: 50px;
         flex-flow: row;
         align-items: center;
@@ -234,7 +220,6 @@ const Img = styled.img `
     padding-left: 15px;
 `
 const P = styled.p ` 
-    font-family: 'Aharoni', sans-serif ;    
     font-size: 20px;
     color:white;
 `
