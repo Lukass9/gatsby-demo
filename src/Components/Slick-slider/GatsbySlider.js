@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Slider from 'react-slick';
 
 import Image from 'gatsby-image';
 import ImageDataHook from '../hooks/contentful/ImageDataHook';
+import Slider from 'react-slick';
 
 
 

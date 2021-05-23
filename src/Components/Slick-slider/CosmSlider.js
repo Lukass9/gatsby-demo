@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Slider from "react-slick";
+
 import styled from "styled-components"
 
 import { graphql } from "gatsby"
@@ -16,6 +16,7 @@ import Lipolaser from "../../images/devices/Kosmetologia/lipolaser.jpg"
 
 import Price from "../Slick-slider/CenyCosm"
 
+import Slider from "react-slick";
 
 const Slider2 = styled(Slider)`
   width: 100%;

@@ -123,10 +123,6 @@ const SubMenu = styled.ul `
     height: ${({openSubMenu}) => openSubMenu ? "188px" : "0px"};
     /* height: 0px; */
     visibility: ${({openSubMenu}) => openSubMenu ? 'visible' : "hidden"};
-    
-    /* :focus{
-        height:188px;
-    } */
 
     transition: height .3s, visibility 3s;
 
@@ -280,8 +276,8 @@ function Menu () {
                 <Ul showMenu = {isOpen}>
                     <Li as={Link} to="/"  activeStyle={{opacity: 1,}}> Koncept SF</Li>
                     <Li as={Link} to="/StacjeZabiegowe" activeStyle={{opacity: 1,}}>Stacje zabiegowe</Li>
-                        <Li onClick={() => setsubIsOpen(!subIsOpen) }>Cennik <Triangle rotate = {subIsOpen}/></Li>
-                        <SubMenu openSubMenu = {subIsOpen}>
+                        <Li onClick={() => setsubIsOpen(!subIsOpen) } >Cennik <Triangle rotate = {subIsOpen}/></Li>
+                        <SubMenu openSubMenu = {subIsOpen} >
                             <AnchorLinkWithoutDecoration to="/Cennik#scroll_fitwell" stripHash><SubLi>Stacje fitness & wellness</SubLi></AnchorLinkWithoutDecoration>
                             <AnchorLinkWithoutDecoration to="/Cennik#scroll_cosm" stripHash> <SubLi>Kosmetologia</SubLi> </AnchorLinkWithoutDecoration>
                             <Hr/>

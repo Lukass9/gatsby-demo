@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Slider from "react-slick";
 import styled from "styled-components"
 
 import { graphql } from "gatsby"
@@ -12,6 +11,7 @@ import Swan from "../../images/devices/fitness/Swan.jpg"
 import Vacu from "../../images/devices/fitness/Vacu.jpg"
 import Roll from "../../images/devices/fitness/RollShaper.jpg"
 
+import Slider from "react-slick";
 
 
 const Slider2 = styled(Slider)`
