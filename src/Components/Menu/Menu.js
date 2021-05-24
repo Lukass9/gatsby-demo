@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 import { Link } from "gatsby"
@@ -83,7 +83,6 @@ const Li = styled.li `
 
   ${({theme}) => theme.media.desktop} {
     margin-left: 40px
-
   }
 `
 
@@ -260,6 +259,15 @@ function Menu () {
     const [isOpen, setIsOpen] = useState(false);
     const [subIsOpen, setsubIsOpen] = useState(false);
 
+    useEffect(  () => {
+            document.onclick = (e)=>{
+                if(e.target.id != "SubMenu" && e.target.id != "Menu"){
+                    setsubIsOpen(false);
+                    setIsOpen(false);
+                }
+            }
+        }
+    )
     return(  
         <>
         <StyledMenu>
@@ -269,14 +277,14 @@ function Menu () {
                         <Img src={Logo} alt="asd"/>
                         <P> WROCLAW <b>trzebnicka</b> </P>
                     </WrapperLogo>
-                    <WrapperHamburger onClick={() => setIsOpen(!isOpen) } >  
+                    <WrapperHamburger id="Menu" onClick={() => setIsOpen(!isOpen) } >  
                         <Hamburger IsOpen = {isOpen}/>
                     </WrapperHamburger>
                 </WrapperMenu>
                 <Ul showMenu = {isOpen}>
                     <Li as={Link} to="/"  activeStyle={{opacity: 1,}}> Koncept SF</Li>
                     <Li as={Link} to="/StacjeZabiegowe" activeStyle={{opacity: 1,}}>Stacje zabiegowe</Li>
-                        <Li onClick={() => setsubIsOpen(!subIsOpen) } >Cennik <Triangle rotate = {subIsOpen}/></Li>
+                        <Li id="SubMenu" onClick={() => setsubIsOpen(!subIsOpen) } >Cennik <Triangle rotate = {subIsOpen}/></Li>
                         <SubMenu openSubMenu = {subIsOpen} >
                             <AnchorLinkWithoutDecoration to="/Cennik#scroll_fitwell" stripHash><SubLi>Stacje fitness & wellness</SubLi></AnchorLinkWithoutDecoration>
                             <AnchorLinkWithoutDecoration to="/Cennik#scroll_cosm" stripHash> <SubLi>Kosmetologia</SubLi> </AnchorLinkWithoutDecoration>
