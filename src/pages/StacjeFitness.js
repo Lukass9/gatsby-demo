@@ -9,6 +9,10 @@ import Img from "gatsby-image"
 
 import H1 from "../Components/H1/H1"
 
+import { FitnessDevice } from "../Components/Data/DataDevice"
+import { deviceImageSwan } from "../Components/Data/DataDevice"
+import { deviceImage } from "../Components/Data/DataDevice"
+
 // const H1 = styled.h1 ` 
 //     width: 100%;
 //     background-color: #f8f9fa;
@@ -263,11 +267,24 @@ function ModalImg ( {data, device} ) {
 }
 
 
+
+
 ///////////////////////////////RENDER///////////////////////////////////////
 
 const StacjeFitness = ( {data} ) => {
 
+  console.log("data to:");
   console.log(data);
+
+  function ShowGatsbyImg ( {data, device} ) {
+    if(device === "Swan") return <GatsbyImg fluid ={data.Swan.childImageSharp.fluid} alt="Swan" />
+    else if(device === "Vacu") return <GatsbyImg fluid ={data.Vacu.childImageSharp.fluid} alt="Vacu" />
+    else if(device === "Roll") return <GatsbyImg fluid ={data.Roll.childImageSharp.fluid} alt="Roll" />
+    else if(device === "Elektro") return <GatsbyImg fluid ={data.Elektro.childImageSharp.fluid} alt="Elektro" />
+    else if(device === "Limfo") return <GatsbyImg fluid ={data.Limfo.childImageSharp.fluid} alt="Limfo" />
+    else if(device === "Sauna") return <GatsbyImg fluid ={data.Sauna.childImageSharp.fluid} alt="Sauna" />
+    else return <GatsbyImg fluid ={data.Swan.childImageSharp.fluid} alt="Swan" />
+  }
 
   const [isOpen, setIsOpen] = useState(false);
   const [device, setDevice] = useState("Swan");
@@ -287,7 +304,6 @@ function setModal(device) {
   setIsOpen(!isOpen);
 }
 
-
  return(
   <>
     <OpenModal
@@ -299,6 +315,32 @@ function setModal(device) {
     />
     <Wrapp isOpen = {isOpen}>
       <Layout>
+
+
+      {/* <H1>STREFA FITNESS</H1> */}
+      {/* <PhotoWrapp> */}
+      
+      {/* {({data})=> (ShowGatsbyImg( {data} ,"Roll" )) } */}
+
+      {/* {FitnessDevice.map( ({name, description, shortName, path}) => ( */}
+          {/* <DescribeDevice onClick = {()=> setModal(`${shortName}`)} > */}
+
+            {/* {console.log("--------------------------------------")} */}
+            {/* {console.log(data.Roll.childImageSharp.fixed)} */}
+            {/* {console.log( deviceImage({data}, "Swan") ) } */}
+            {/* {ShowGatsbyImg( {data, shortName} ) } */}
+            {/* {<GatsbyImg fixed ={data.Roll.childImageSharp.fixed} alt="Roll"/>  } */}
+            {/* <GatsbyImg fluid = {deviceImage({data}, "Swan"))} alt="Swan"/> */}
+            {/* <H2>{name}</H2> */}
+            {/* <P>{description}</P> */}
+          {/* </DescribeDevice> */}
+      {/* ))} */}
+      {/* </PhotoWrapp> */}
+
+
+
+
+
           <H1>STREFA FITNESS</H1>
           <PhotoWrapp>
             <DescribeDevice onClick = {(device)=> setModal("Swan")} >

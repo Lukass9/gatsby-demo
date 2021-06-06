@@ -1,14 +1,14 @@
 import React, { useEffect } from "react"
 import styled from "styled-components"
 
-import FitnessBG from "../BackgroundImg/FintessBG"
-import WellnessBG from "../BackgroundImg/WellnessBG"
-import KosmetologiaBG from "../BackgroundImg/KosmetologiaBG"
-import Suplementy from "../BackgroundImg/Suplementy"
-import CennikButtonBG from "../BackgroundImg/CennikButtonBG"
-import KontaktBG from "../BackgroundImg/KontaktBG"
+import FitnessBG from "../BackgroundImg/button/FintessBG"
+import WellnessBG from "../BackgroundImg/button/WellnessBG"
+import KosmetologiaBG from "../BackgroundImg/button/KosmetologiaBG"
+import Suplementy from "../BackgroundImg/button/Suplementy"
+import CennikButtonBG from "../BackgroundImg/button/CennikButtonBG"
+import KontaktBG from "../BackgroundImg/button/KontaktBG"
 
-import BackgroundButton from "../BackgroundImg/BackgroundButton"
+import BackgroundButton from "../BackgroundImg/button/BackgroundButton"
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";

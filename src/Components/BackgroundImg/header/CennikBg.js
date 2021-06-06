@@ -52,12 +52,15 @@ const CennikBg = styled(BackgroundSection)`
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 30vh;
+  height: 20vh;
   background-position:center 130%;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
 
+${({theme}) => theme.media.desktop} {
+      height: 30vh;
+    }
 `
 
 export default CennikBg

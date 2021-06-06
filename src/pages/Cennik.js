@@ -6,7 +6,7 @@ import styled, { keyframes } from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
-import CennikBg from "../Components/BackgroundImg/CennikBg"
+import CennikBg from "../Components/BackgroundImg/header/CennikBg"
 import H1 from "../Components/H1/H1"
 import FitnessSlider from "../Components/Slick-slider/FitnessSlider"
 import CosmSlider from "../Components/Slick-slider/CosmSlider"

@@ -1,3 +1,4 @@
+const DATO_TOKEN = "65e267ce839e5a29b580f6a000834d"
 
 module.exports = {
   pathPrefix: "/StudioFiguraWithGatsby",
@@ -12,6 +13,16 @@ module.exports = {
         path: `${__dirname}/src/images/`,
       },
     },
+
+    {
+      resolve: `gatsby-source-datocms`,
+      options: {
+        apiToken: `65e267ce839e5a29b580f6a000834d`,
+        preview: false,
+        disableLiveReload: false,
+      },
+    },
+
     {
       resolve: "gatsby-plugin-anchor-links",
       options: {

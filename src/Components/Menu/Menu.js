@@ -266,6 +266,11 @@ function Menu () {
                     setIsOpen(false);
                 }
             }
+
+            if(window.top.location.pathname === "/Cennik"){
+                const SubMenu = document.getElementById("SubMenu")
+                SubMenu.style.opacity = "1";
+            }
         }
     )
     return(  
@@ -284,7 +289,7 @@ function Menu () {
                 <Ul showMenu = {isOpen}>
                     <Li as={Link} to="/"  activeStyle={{opacity: 1,}}> Koncept SF</Li>
                     <Li as={Link} to="/StacjeZabiegowe" activeStyle={{opacity: 1,}}>Stacje zabiegowe</Li>
-                        <Li id="SubMenu" onClick={() => setsubIsOpen(!subIsOpen) } >Cennik <Triangle rotate = {subIsOpen}/></Li>
+                        <Li id="SubMenu"  onClick={() => setsubIsOpen(!subIsOpen) } >Cennik <Triangle rotate = {subIsOpen}/></Li>
                         <SubMenu openSubMenu = {subIsOpen} >
                             <AnchorLinkWithoutDecoration to="/Cennik#scroll_fitwell" stripHash><SubLi>Stacje fitness & wellness</SubLi></AnchorLinkWithoutDecoration>
                             <AnchorLinkWithoutDecoration to="/Cennik#scroll_cosm" stripHash> <SubLi>Kosmetologia</SubLi> </AnchorLinkWithoutDecoration>
@@ -293,9 +298,9 @@ function Menu () {
                             <Hr/>
                             <AnchorLinkWithoutDecoration to="/Cennik#scroll_sup" stripHash><SubLi>Kosmetyki i suplementy</SubLi></AnchorLinkWithoutDecoration>
                         </SubMenu>
-                    <Li>Promocje</Li>
+                    <Li as={Link} to="/Promocje">Promocje</Li>
                     <Li>Wspomnienia ;)</Li>
-                    <Li>Wskazówki</Li>
+                    <Li as={Link} to="/Wskazowki">Wskazówki</Li>
                     <Li>Kadra</Li>
                     <Li>Kontakt</Li>
                 </Ul>         
