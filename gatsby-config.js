@@ -1,5 +1,3 @@
-const DATO_TOKEN = "65e267ce839e5a29b580f6a000834d"
-
 module.exports = {
   pathPrefix: "/StudioFiguraWithGatsby",
   siteMetadata: {
@@ -17,7 +15,7 @@ module.exports = {
     {
       resolve: `gatsby-source-datocms`,
       options: {
-        apiToken: `65e267ce839e5a29b580f6a000834d`,
+        apiToken: `b4d8b5005236381583b7b43b9cde42`,
         preview: false,
         disableLiveReload: false,
       },

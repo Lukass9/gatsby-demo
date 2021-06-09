@@ -3,6 +3,8 @@ import { graphql, Link } from "gatsby"
 import Layout from "../layout/Layout"
 import styled from "styled-components"
 
+import Button from "../Components/Button/Button1"
+
 import Markdown from 'react-markdown'
 
 // import PromocjeBg from "../Components/BackgroundImg/header/PromocjaBg"
@@ -14,6 +16,7 @@ query Wskazowski {
       node {
         content
         title
+        slug
         picture {
           url
           alt
@@ -66,6 +69,8 @@ const Title = styled.h1 `
 const Img = styled.img ` 
     width: 100%;
     height: 100%;
+    /* max-width: 500px; */
+    /* max-height: 400px; */
 `
 const WrappArticle = styled.div `
     display: flex;
@@ -106,23 +111,6 @@ const WrappButton = styled.div `
 
 `
 
-const Button = styled.button ` 
-  width: 30vw;
-  height: 10vw;
-  background-color: transparent;
-  border-color: #F59F00;
-  border-radius: 8px;
-  border-width: 1px;
-  color: #F59F00;
-  margin-right: 10px;
-  box-shadow: 5px 10px 8px -10px rgba(0,0,0,0.75);
-
-  ${({theme})=> theme.media.desktop}{
-    width: 8vw;
-    height: 3vw;
-  }
-`
-
 const Promocje = ( {data} ) => {
 
    return (
@@ -142,13 +130,17 @@ const Promocje = ( {data} ) => {
                             <Content> 
                               <Markdown
                                 escapeHtml={true}
-                                children={Article.node.content.substr(0, 300) + " ..."} 
+                                children={Article.node.content.substr(0, 300) + "..."} 
                               />
                               
                             </Content>
 
                             <WrappButton>
-                              <Button> Czytaj więcej </Button>
+                              <a href={Article.node.slug}>
+                                <Button > 
+                                  Czytaj więcej
+                                </Button>
+                              </a>
                             </WrappButton>
 
                         </WrappColumn>
