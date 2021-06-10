@@ -19,6 +19,16 @@ import Slider from "react-slick";
 
 const Slider2 = styled(Slider)`
   width: 100%;
+
+  .slick-prev:before,
+  .slick-next:before
+  {
+    color: #e67817;
+  }
+
+  .slick-slide.slick-center img {
+    transform: scale(1.1) translateY(15px);
+  }
 `
 
 const SwanImg = styled.img` 
