@@ -30,6 +30,14 @@ const Slider2 = styled(Slider)`
   .slick-slide.slick-center img {
     transform: scale(1.1) translateY(15px);
   }
+
+  .slick-slide img
+  {
+    margin: 20px 0;
+    transform: scale( 0.8);
+    transition: transform .6s;
+    display: block;
+  }
 `
 
 const SwanImg = styled.img` 
