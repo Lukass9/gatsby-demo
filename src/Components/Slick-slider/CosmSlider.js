@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 
 import styled from "styled-components"
 
@@ -15,6 +15,8 @@ import Lipolaser from "../../images/devices/Kosmetologia/lipolaser.jpg"
 
 
 import Price from "../Slick-slider/CenyCosm"
+import { HifuData } from "../Slick-slider/data"
+import { CaviShaperData } from "../Slick-slider/data"
 
 import Slider from "react-slick";
 
@@ -83,15 +85,25 @@ const S = styled.s`
   color: red;
 `
 
-function RenderTable(props) {
-  const Price = props.price;
-  if (Price[props.activeSlide1][0] === "Hifu")
-    return (
+const Select = styled.select` 
+  border-radius: 5px;
+  border-color: ${({theme})=>theme.colors.orangeF};
+  padding: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+  background-color: white;
+`
 
+
+function RenderTable( {activeSlide1 ,price ,HifuData, CaviShaperData, caviSahaperVaule, onChange} ) {
+
+  const Price = price;
+  if (Price[activeSlide1][0] === "Hifu")
+    return (
       <Table>
         <thead>
           <tr>
-            <th colSpan="4"> <H1>{Price[props.activeSlide1][0]} </H1> </th>
+            <th colSpan="4"> <H1>{Price[activeSlide1][0]} </H1> </th>
           </tr>
           <TrGray>
             <Th>Miejsce zabiegowe</Th> <Th>Cena za zabieg</Th> 
@@ -99,60 +111,91 @@ function RenderTable(props) {
         </thead>
         <tbody>
 
-
-          <tr>
-            <Th>Okolice oczu</Th> <Td> {Price[props.activeSlide1][1]} zł</Td> 
-          </tr>
-          <TrGray>
-            <Th>Okolice oczu + czoło</Th> <Td>{Price[props.activeSlide1][2]} zł</Td> 
-          </TrGray>
-          <tr>
-            <Th>policzek + linia żuchwy</Th> <Td>{Price[props.activeSlide1][3]} zł</Td> 
-          </tr>
-          <TrGray>
-            <Th>podbródek</Th> <Td>{Price[props.activeSlide1][4]} zł</Td> 
-          </TrGray>
-          <tr>
-            <Th>Podbródek + szyja</Th> <Td>{Price[props.activeSlide1][5]} zł</Td> 
-          </tr>
-          <TrGray>
-            <Th>Cała twarz</Th> <Td>{Price[props.activeSlide1][6]} zł</Td> 
-          </TrGray>
-          <tr>
-            <Th>Szyja</Th> <Td>{Price[props.activeSlide1][7]} zł</Td> 
-          </tr>
-          <TrGray>
-            <Th>Dekolot</Th> <Td>{Price[props.activeSlide1][8]} zł</Td> 
-          </TrGray>
-          <tr>
-            <Th>Brzuch</Th> <Td>{Price[props.activeSlide1][9]} zł</Td> 
-          </tr>
-          <TrGray>
-            <Th>Cała talia</Th> <Td>{Price[props.activeSlide1][10]} zł</Td> 
-          </TrGray>
-          <tr>
-            <Th>Wewnętrzna część ud</Th> <Td>{Price[props.activeSlide1][11]} zł</Td> 
-          </tr>
-          <TrGray>
-            <Th>Uda nad kolanami</Th> <Td>{Price[props.activeSlide1][12]} zł</Td> 
-          </TrGray>
-          <tr>
-            <Th>Pelikany</Th> <Td>{Price[props.activeSlide1][13]} zł</Td> 
-          </tr>
-
-
+          {HifuData.treatmentPlace.map((el,i)=>{ 
+            if(i % 2 == 0){
+              return(
+                  <tr>
+                    <Th> {el} </Th> <Td> {HifuData.price[i]} zł</Td> 
+                  </tr>
+              )
+            }
+            else{
+              return(
+                <TrGray>
+                  <Th> {el} </Th> <Td> {HifuData.price[i]} zł</Td> 
+                </TrGray>
+              )
+            }
+          })}
         </tbody>
       </Table>
-
-
-
     )
 
+  else if (Price[activeSlide1][0] === "Cavi Shaper") {
+
+    return (
+      <Table>
+        <thead>
+          <tr>
+            <th colSpan="4"> <H1>{Price[activeSlide1][0]} </H1> </th>
+          </tr>
+          <tr>
+            <th colSpan="4">
+              <Select className="deviceItem" onChange = {onChange}>
+                {CaviShaperData.deviceItem.map((device, i) => {
+                  return (<option value={i}> {device} </option>)
+                })}
+              </Select>
+            </th>
+          </tr>
+          <TrGray>
+            <Th>Wejścia</Th> <Th>Cena za zabieg</Th> <ThPrice>Cena</ThPrice> <Th>Cena pakietu </Th>
+          </TrGray>
+        </thead>
+        <tbody>
+
+          {
+            // if(CaviShaperData.deviceItem[0] )
+            CaviShaperData.deviceEntryForBody.map((el, i) => {
+
+              let entry = el;
+              if(caviSahaperVaule >= 2) entry = CaviShaperData.deviceEntryForFace[i];
+
+              const priceForSingleEntry = CaviShaperData.price[caviSahaperVaule][i] / entry;
+              const price = entry * CaviShaperData.price[caviSahaperVaule][0];
+
+              
+              function crossedOutPrice() {
+                if (price == (priceForSingleEntry * entry)) {
+                  return price;
+                } else return (<S> {price} </S>)
+              }
+
+              if (i % 2 == 0) {
+                return (
+                  <tr>
+                    <Th> {entry} </Th> <Td> {priceForSingleEntry} zł</Td> <TdPrice>{crossedOutPrice()} zł</TdPrice> <Td>{priceForSingleEntry * entry} zł</Td>
+                  </tr>
+                )
+              }
+              else {
+                return (
+                  <TrGray>
+                    <Th> {entry} </Th> <Td> {priceForSingleEntry} zł</Td> <TdPrice>{crossedOutPrice()} zł</TdPrice> <Td>{priceForSingleEntry * entry} zł</Td>
+                  </TrGray>
+                )
+              }
+            })}
+        </tbody>
+      </Table>
+    )
+  }
+  else
   return (
     <Table>
       <thead>
         <tr>
-          <th colSpan="4"> <H1>{Price[props.activeSlide1][0]} </H1> </th>
+          <th colSpan="4"> <H1>{Price[activeSlide1][0]} </H1> </th>
         </tr>
         <TrGray>
           <Th>Wejścia</Th> <Th>Cena za zabieg</Th> <ThPrice>Cena</ThPrice> <Th>Cena pakietu </Th>
@@ -160,26 +203,27 @@ function RenderTable(props) {
       </thead>
       <tbody>
         <tr>
-          <Th>1</Th> <Td> {Price[props.activeSlide1][1]} zł</Td> <TdPrice>{Price[props.activeSlide1][2]} zł</TdPrice> <Td>{Price[props.activeSlide1][3]} zł</Td>
+          <Th>1</Th> <Td> {Price[activeSlide1][1]} zł</Td> <TdPrice>{Price[activeSlide1][2]} zł</TdPrice> <Td>{Price[activeSlide1][3]} zł</Td>
         </tr>
         <TrGray>
-          <Th>8</Th> <Td>{Price[props.activeSlide1][4]} zł</Td> <TdPrice> <S>{Price[props.activeSlide1][5]} zł</S></TdPrice><Td>{Price[props.activeSlide1][6]} zł</Td>
+          <Th>8</Th> <Td>{Price[activeSlide1][4]} zł</Td> <TdPrice> <S>{Price[activeSlide1][5]} zł</S></TdPrice><Td>{Price[activeSlide1][6]} zł</Td>
         </TrGray>
         <tr>
-          <Th>12</Th> <Td>{Price[props.activeSlide1][7]} zł</Td> <TdPrice> <S>{Price[props.activeSlide1][8]} zł</S></TdPrice><Td>{Price[props.activeSlide1][9]} zł</Td>
+          <Th>12</Th> <Td>{Price[activeSlide1][7]} zł</Td> <TdPrice> <S>{Price[activeSlide1][8]} zł</S></TdPrice><Td>{Price[activeSlide1][9]} zł</Td>
         </tr>
       </tbody>
     </Table>
 
   )
-
 }
 
 // const SlickSlider = ({ data }) => {
 class CosmSlider extends Component {
   state = {
     activeSlide: 0,
+    caviSahaperVaule: 0,
   };
+
   render() {
     const settings = {
 
@@ -228,8 +272,15 @@ class CosmSlider extends Component {
 
         </Slider2>
 
-        <RenderTable activeSlide1={this.state.activeSlide}
-          price={Price} />
+        <RenderTable 
+          activeSlide1={this.state.activeSlide}
+          price={Price} 
+          HifuData={HifuData} 
+          CaviShaperData={CaviShaperData} 
+          caviSahaperVaule = {this.state.caviSahaperVaule}
+          onChange = {(e)=> this.setState({caviSahaperVaule : e.target.value})}
+          // onChange = {(e)=> console.log(e.target.value)}
+        />
 
       </>
     );
