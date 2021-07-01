@@ -10,6 +10,8 @@ import CennikBg from "../Components/BackgroundImg/header/CennikBg"
 import H1 from "../Components/H1/H1"
 import FitnessSlider from "../Components/Slick-slider/FitnessSlider"
 import CosmSlider from "../Components/Slick-slider/CosmSlider"
+import PackageSlider from "../Components/Slick-slider/PackageSlider"
+
 import Circle from "../Components/ProductCircle/ProductCircle"
 import Circle2 from "../Components/ProductCircle/ProductCircle2"
 import ProductPrice from "../Components/ProductCircle/ProductPrice"
@@ -143,6 +145,11 @@ const Cennik = ({ data }) => (
     </WrappSlider>
 
     <H1 id = "scroll_pack">Pakiety</H1>
+    <WrappSlider>
+      <Wrap>
+        <PackageSlider />
+      </Wrap>
+    </WrappSlider>
 
     <H1 id = "scroll_sup">Kosmetyki i suplementy</H1>
     <WrappCircle>

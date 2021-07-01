@@ -281,6 +281,8 @@ const Cennik = ({ data }) => (
     </WrappSlider>
 
     <H1>Pakiety</H1>
+   
+    
 
     <H1>Suplementy</H1>
     <WrappCircle>

@@ -21,6 +21,7 @@ const price = [
     "30", "368", "240",
     "25", "552", "300"],
 ]
+export default price
 
 export const CaviShaperData = {
     deviceName: "Cavi Shaper",
@@ -49,4 +50,15 @@ export const HifuData = {
             "500-1000"],
 }
 
-export default price
+export const PackageData = {
+    packageName: ["Intensywne spalanie", "Pogromca cellulitu", "Detox", "Vacu Shaper + Roll Shaper"],
+    packageComposiion: ["Swan Shaper + Vacu Shaper + Roll Shaper", "Swan Shaper + Roll Shaper + Limfodrenaż",
+                        "Sauna + Roll Shaper + Limfodrenaż", "Vacu Shaper + Roll Shaper"],
+    deviceEntry: [4,8,12],
+    price: [ 
+        [270, 680, 1200 ],
+        [270, 680, 1200 ],
+        [140, 400, 480 ],
+        [170, 480, 600 ]
+    ]
+}
