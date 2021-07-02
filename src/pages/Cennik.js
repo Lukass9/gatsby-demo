@@ -10,12 +10,14 @@ import CennikBg from "../Components/BackgroundImg/header/CennikBg"
 import H1 from "../Components/H1/H1"
 import FitnessSlider from "../Components/Slick-slider/FitnessSlider"
 import CosmSlider from "../Components/Slick-slider/CosmSlider"
-import PackageSlider from "../Components/Slick-slider/PackageSlider"
+import PackageSlider from "../Components/Slick-slider/packageSlider"
 
 import Circle from "../Components/ProductCircle/ProductCircle"
 import Circle2 from "../Components/ProductCircle/ProductCircle2"
 import ProductPrice from "../Components/ProductCircle/ProductPrice"
 import ProductSlide from "../Components/ProductCircle/ProductSlide"
+import WrappCircle2 from "../Components/ProductCircle/WrappCircle"
+
 
 import PriceTag from "../images/entypo_price-tag.svg"
 
@@ -184,7 +186,9 @@ const Cennik = ({ data }) => (
       </ProductSlide>
     </WrappCircle>
 
-    <WrappCircle>
+    <WrappCircle2 data = {data} img = {<Img fluid={data.Jeczmien.childImageSharp.fluid} ale="Jeczmien" />}/>
+
+    {/* <WrappCircle>
       <Circle2>
         <Img fluid={data.Jeczmien.childImageSharp.fluid} alt="Jeczmien" />
       </Circle2>
@@ -200,9 +204,9 @@ const Cennik = ({ data }) => (
         <h1> Młody Jęczmień </h1>
         <p> {opis} </p>
       </ProductSlide>
-    </WrappCircle>
+    </WrappCircle> */}
 
-    <ExampleValue />
+    {/* <ExampleValue /> */}
   </Layout>
 )
 
