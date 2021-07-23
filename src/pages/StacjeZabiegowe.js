@@ -114,7 +114,7 @@ const StacjeZabiegowe = ( {data} ) =>(
                     <P>STACJE FITNESS & WALLNESS</P>
                   </Photo>
                     
-                  <Photo>
+                  <Photo as={Link} to="/StacjeCosm">
                     <GatsbyImg fluid ={data.cosm.childImageSharp.fluid} alt="cosm"/>
                     <P>KOSMETOLOGIA ESTETYCZNA</P>
                   </Photo>

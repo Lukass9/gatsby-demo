@@ -130,11 +130,13 @@ export const WelnessDataDevice = [
     },
 ]
 
-export const DeviceResolutsAndBenefits = [
-    {
-        deviceName: "Vacu Shaper",
+export const CosmDataDevice = [
+    { 
+        deviceName: "Beauty Shaper",
+        shortName: "Beauty",      
+        deviceDescription: "W przypadku sauny Infrared, za ogrzanie ciała odpowiadają promienniki podczerwieni, które wytwarzają fale podczerwone wnikające nawet do 4,5 cm pod skórę rozgrzewając tym samym nasze ciało.",
         resoluts: [ 
-            "Vacu",
+            "Beauty",
             "dogłębnie odżywiona i odbudowana skóra",
             "likwidacja cellulitu",
             "sprężyste i jędrne ciało",
@@ -143,11 +145,75 @@ export const DeviceResolutsAndBenefits = [
             "zwiększona odporność na infekcje"
         ],
         benefits: [
-            "Vacu",
+            "Beauty",
             "jędrna, idealnie wygładzona skóra",
             "idealnie wyrzeźbiona sylwetka",
             "intensywne spalanie tkanki tłuszczowej",
             "redukcja cellulitu"
         ]
     },
+    { 
+        deviceName: "Cavi Shaper",
+        shortName: "Cavi",      
+        deviceDescription: "W przypadku sauny Infrared, za ogrzanie ciała odpowiadają promienniki podczerwieni, które wytwarzają fale podczerwone wnikające nawet do 4,5 cm pod skórę rozgrzewając tym samym nasze ciało.",
+        resoluts: [ 
+            "Cavi",
+            "dogłębnie odżywiona i odbudowana skóra",
+            "likwidacja cellulitu",
+            "sprężyste i jędrne ciało",
+            "wymodelowana sylwetka",
+            "zwiększona wydajność organizmu",
+            "zwiększona odporność na infekcje"
+        ],
+        benefits: [
+            "Cavi",
+            "jędrna, idealnie wygładzona skóra",
+            "idealnie wyrzeźbiona sylwetka",
+            "intensywne spalanie tkanki tłuszczowej",
+            "redukcja cellulitu"
+        ]
+    },
+    { 
+        deviceName: "Hifu",
+        shortName: "Hifu",      
+        deviceDescription: "W przypadku sauny Infrared, za ogrzanie ciała odpowiadają promienniki podczerwieni, które wytwarzają fale podczerwone wnikające nawet do 4,5 cm pod skórę rozgrzewając tym samym nasze ciało.",
+        resoluts: [ 
+            "Hifu",
+            "dogłębnie odżywiona i odbudowana skóra",
+            "likwidacja cellulitu",
+            "sprężyste i jędrne ciało",
+            "wymodelowana sylwetka",
+            "zwiększona wydajność organizmu",
+            "zwiększona odporność na infekcje"
+        ],
+        benefits: [
+            "Hifu",
+            "jędrna, idealnie wygładzona skóra",
+            "idealnie wyrzeźbiona sylwetka",
+            "intensywne spalanie tkanki tłuszczowej",
+            "redukcja cellulitu"
+        ]
+    },
+    { 
+        deviceName: "Lipolaser",
+        shortName: "Lipolaser",      
+        deviceDescription: "W przypadku sauny Infrared, za ogrzanie ciała odpowiadają promienniki podczerwieni, które wytwarzają fale podczerwone wnikające nawet do 4,5 cm pod skórę rozgrzewając tym samym nasze ciało.",
+        resoluts: [ 
+            "Lipolaser",
+            "dogłębnie odżywiona i odbudowana skóra",
+            "likwidacja cellulitu",
+            "sprężyste i jędrne ciało",
+            "wymodelowana sylwetka",
+            "zwiększona wydajność organizmu",
+            "zwiększona odporność na infekcje"
+        ],
+        benefits: [
+            "Lipolaser",
+            "jędrna, idealnie wygładzona skóra",
+            "idealnie wyrzeźbiona sylwetka",
+            "intensywne spalanie tkanki tłuszczowej",
+            "redukcja cellulitu"
+        ]
+    },
+    
 ]
