@@ -6,8 +6,8 @@ import Modal from "../Components/Modal/Modal1"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
-import { FitnessDataDevice } from "../Components/DeviceDescriptions/Data";
-import { WelnessDataDevice } from "../Components/DeviceDescriptions/Data";
+import { FitnessDataDevice } from "../Components/DeviceDescriptions/data";
+import { WelnessDataDevice } from "../Components/DeviceDescriptions/data";
 import DescribeDevice2 from "../Components/DeviceDescriptions/DescribeDevice";
 
 import H1 from "../Components/H1/H1"
@@ -24,145 +24,10 @@ const Wrapp = styled.div `
   filter: ${({isOpen}) => isOpen? "brightness(45%) blur(3px)" : "blur(0px)" };
 `
 
-const SwanResoluts =  [
-  "Swan",
-  "dogłębnie odżywiona i odbudowana skóra",
-  "likwidacja cellulitu",
-  "sprężyste i jędrne ciało",
-  "wymodelowana sylwetka",
-  "zwiększona wydajność organizmu",
-  "zwiększona odporność na infekcje"
-]
-
-const SwanBenefits = [
-  "Swan",
-  "jędrna, idealnie wygładzona skóra",
-  "idealnie wyrzeźbiona sylwetka",
-  "intensywne spalanie tkanki tłuszczowej",
-  "redukcja cellulitu"
-  ]
-
-const VacuResoluts =  [
-  "Vacu",
-  "dogłębnie odżywiona i odbudowana skóra",
-  "likwidacja cellulitu",
-  "sprężyste i jędrne ciało",
-  "wymodelowana sylwetka",
-  "zwiększona wydajność organizmu",
-  "zwiększona odporność na infekcje"
-]
-
-const VacuBenefits = [
-  "Vacu",
-  "jędrna, idealnie wygładzona skóra",
-  "idealnie wyrzeźbiona sylwetka",
-  "intensywne spalanie tkanki tłuszczowej",
-  "redukcja cellulitu"
-  ]
-
-const RollResoluts =  [
-  "Roll",
-  "dogłębnie odżywiona i odbudowana skóra",
-  "likwidacja cellulitu",
-  "sprężyste i jędrne ciało",
-  "wymodelowana sylwetka",
-  "zwiększona wydajność organizmu",
-  "zwiększona odporność na infekcje"
-  ]
-
-const RollBenefits = [
-  "Roll",
-  "jędrna, idealnie wygładzona skóra",
-  "idealnie wyrzeźbiona sylwetka",
-  "intensywne spalanie tkanki tłuszczowej",
-  "redukcja cellulitu"
-  ]
-
-const ElektroResoluts =  [
-  "Elektro",
-  "dogłębnie odżywiona i odbudowana skóra",
-  "likwidacja cellulitu",
-  "sprężyste i jędrne ciało",
-  "wymodelowana sylwetka",
-  "zwiększona wydajność organizmu",
-  "zwiększona odporność na infekcje"
-  ]
-
-const ElektroBenefits = [
-  "Elektro",
-  "jędrna, idealnie wygładzona skóra",
-  "idealnie wyrzeźbiona sylwetka",
-  "intensywne spalanie tkanki tłuszczowej",
-  "redukcja cellulitu"
-  ]
-
-const LimfoResoluts =  [
-  "Limfo",
-  "dogłębnie odżywiona i odbudowana skóra",
-  "likwidacja cellulitu",
-  "sprężyste i jędrne ciało",
-  "wymodelowana sylwetka",
-  "zwiększona wydajność organizmu",
-  "zwiększona odporność na infekcje"
-  ]
-
-const LimfoBenefits = [
-  "Limfo",
-  "jędrna, idealnie wygładzona skóra",
-  "idealnie wyrzeźbiona sylwetka",
-  "intensywne spalanie tkanki tłuszczowej",
-  "redukcja cellulitu"
-  ]
-
-const SaunaResoluts =  [
-  "Sauna",
-  "dogłębnie odżywiona i odbudowana skóra",
-  "likwidacja cellulitu",
-  "sprężyste i jędrne ciało",
-  "wymodelowana sylwetka",
-  "zwiększona wydajność organizmu",
-  "zwiększona odporność na infekcje"
-  ]
-
-const SaunaBenefits = [
-  "Sauna",
-  "jędrna, idealnie wygładzona skóra",
-  "idealnie wyrzeźbiona sylwetka",
-  "intensywne spalanie tkanki tłuszczowej",
-  "redukcja cellulitu"
-  ]
-
-
 function OpenModal({ModalImg,data, exitModal ,isOpen, device}){
 
   let resolut = device.resoluts;
   let benefit = device.benefits;
-
-  // if(device === "Swan") {
-  //   resolut = SwanResoluts;
-  //   benefit = SwanBenefits;
-  // }
-  // else if(device === "Vacu") {
-  //   resolut = VacuResoluts;
-  //   benefit = VacuBenefits;
-  // }
-  // else if(device === "Roll") {
-  //   resolut = RollResoluts;
-  //   benefit = RollBenefits;
-  // }
-  // else if(device === "Elektro") {
-  //   resolut = ElektroResoluts;
-  //   benefit = ElektroBenefits;
-  // }
-  // else if(device === "Limfo") {
-  //   resolut = LimfoResoluts;
-  //   benefit = LimfoBenefits;
-  // }
-  // else if(device === "Sauna") {
-  //   resolut = SaunaResoluts;
-  //   benefit = SaunaBenefits;
-  // }
-
 
   if(isOpen){
     return <Modal ModalImg = {ModalImg} 
