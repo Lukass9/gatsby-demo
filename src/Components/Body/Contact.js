@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-import { Icon, InlineIcon } from '@iconify/react';
+import { Icon } from '@iconify/react';
 import phoneAlt from '@iconify/icons-fa-solid/phone-alt';
 import envelopeIcon from '@iconify/icons-fa-solid/envelope';
 import clockIcon from '@iconify/icons-fa-solid/clock';

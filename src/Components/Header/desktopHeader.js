@@ -8,11 +8,6 @@ import MailPhoto from "../../images/mail.svg"
 import TrzebDesk from "../../Components/P/trzebnickaDesktop"
 import Wroclaw from "../P/wroclaw"
 
-import { graphql, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
-
-import yourSVG from '../../images/log_bez_tla.svg'
-
 
 const ImgWithoutGatsby = styled.img ` 
     height: 15vw;
@@ -204,22 +199,6 @@ const Ellipse9 = styled(Ellipse) `
 `
 
 const DesktopHeader = ( ) => {
-    const data = useStaticQuery(graphql ` 
-        query Images {
-            twojaStara: file(relativePath: {eq: "log_bez_tla_biale.png"}) {
-                id
-                childImageSharp {
-                  fixed {
-                    ...GatsbyImageSharpFixed
-                  }
-                  
-                  fluid {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              } 
-        }
-    `)
     
     return(
     <Wrapper>

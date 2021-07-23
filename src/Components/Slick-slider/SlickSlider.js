@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components"
 
-import { graphql } from "gatsby"
-import Img from "gatsby-image"
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -92,76 +89,76 @@ const SlickSlider = ({ data }) => {
   );
 }
 
-export const query = graphql`
-query {
-  Swan: file(relativePath: { eq: "devices/fitness/Swan.jpg" }) {
-    childImageSharp {
-      fixed(height:200, width:300, quality: 70) {
-        ...GatsbyImageSharpFixed
-      }
-      fluid(quality: 80, maxWidth: 850) {
-        ...GatsbyImageSharpFluid
-      }
-    }
-  }
+// export const query = graphql`
+// query {
+//   Swan: file(relativePath: { eq: "devices/fitness/Swan.jpg" }) {
+//     childImageSharp {
+//       fixed(height:200, width:300, quality: 70) {
+//         ...GatsbyImageSharpFixed
+//       }
+//       fluid(quality: 80, maxWidth: 850) {
+//         ...GatsbyImageSharpFluid
+//       }
+//     }
+//   }
 
-  Vacu: file(relativePath: { eq: "devices/fitness/Vacu.jpg" }) {
-    childImageSharp {
-      fixed(height:200, width:300, quality: 70){
-        ...GatsbyImageSharpFixed
-      }
-      fluid(quality: 80, maxWidth: 850 ) {
-        ...GatsbyImageSharpFluid
-      }
-    }
-  }
+//   Vacu: file(relativePath: { eq: "devices/fitness/Vacu.jpg" }) {
+//     childImageSharp {
+//       fixed(height:200, width:300, quality: 70){
+//         ...GatsbyImageSharpFixed
+//       }
+//       fluid(quality: 80, maxWidth: 850 ) {
+//         ...GatsbyImageSharpFluid
+//       }
+//     }
+//   }
 
 
-  Roll: file(relativePath: { eq: "devices/fitness/RollShaper.jpg" }) {
-    childImageSharp {
-        fixed(height:200, width:300, quality: 70){
-        ...GatsbyImageSharpFixed
-        }
-        fluid(quality: 80, maxWidth: 850 ) {
-          ...GatsbyImageSharpFluid
-        }
-    }
-  }
+//   Roll: file(relativePath: { eq: "devices/fitness/RollShaper.jpg" }) {
+//     childImageSharp {
+//         fixed(height:200, width:300, quality: 70){
+//         ...GatsbyImageSharpFixed
+//         }
+//         fluid(quality: 80, maxWidth: 850 ) {
+//           ...GatsbyImageSharpFluid
+//         }
+//     }
+//   }
 
-  Elektro: file(relativePath: { eq: "devices/wellness/Elektrostzmulacja.jpg" }) {
-    childImageSharp {
-        fixed(height:200, width:300, quality: 70){
-        ...GatsbyImageSharpFixed
-        }
-        fluid(quality: 80, maxWidth: 850 ) {
-          ...GatsbyImageSharpFluid
-        }
-    }
-  }
+//   Elektro: file(relativePath: { eq: "devices/wellness/Elektrostzmulacja.jpg" }) {
+//     childImageSharp {
+//         fixed(height:200, width:300, quality: 70){
+//         ...GatsbyImageSharpFixed
+//         }
+//         fluid(quality: 80, maxWidth: 850 ) {
+//           ...GatsbyImageSharpFluid
+//         }
+//     }
+//   }
 
-  Limfo: file(relativePath: { eq: "devices/wellness/Limfodrenaż.jpg" }) {
-    childImageSharp {
-        fixed(height:200, width:300, quality: 70){
-        ...GatsbyImageSharpFixed
-        }
-        fluid(quality: 80, maxWidth: 850 ) {
-          ...GatsbyImageSharpFluid
-        }
-    }
-  }
+//   Limfo: file(relativePath: { eq: "devices/wellness/Limfodrenaż.jpg" }) {
+//     childImageSharp {
+//         fixed(height:200, width:300, quality: 70){
+//         ...GatsbyImageSharpFixed
+//         }
+//         fluid(quality: 80, maxWidth: 850 ) {
+//           ...GatsbyImageSharpFluid
+//         }
+//     }
+//   }
 
-  Sauna: file(relativePath: { eq: "devices/wellness/sauna.jpg" }) {
-    childImageSharp {
-        fixed(height:200, width:300, quality: 70){
-        ...GatsbyImageSharpFixed
-        }
-        fluid(quality: 80, maxWidth: 850 ) {
-          ...GatsbyImageSharpFluid
-        }
-    }
-  }
-}
-`
+//   Sauna: file(relativePath: { eq: "devices/wellness/sauna.jpg" }) {
+//     childImageSharp {
+//         fixed(height:200, width:300, quality: 70){
+//         ...GatsbyImageSharpFixed
+//         }
+//         fluid(quality: 80, maxWidth: 850 ) {
+//           ...GatsbyImageSharpFluid
+//         }
+//     }
+//   }
+// }
+// `
 
 
 export default SlickSlider;

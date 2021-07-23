@@ -1,5 +1,4 @@
 import React from "react"
-import OnePageLayout from "../../layout/OnePageLayout"
 import styled from "styled-components"
 
 import LogoSF from "../../images/log_bez_tla.svg"

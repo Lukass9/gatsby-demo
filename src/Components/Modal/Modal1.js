@@ -1,9 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import { Link } from "gatsby"
 
-import { graphql } from "gatsby"
-import Img from "gatsby-image"
 
 const WindowWrappFixed = styled.div ` 
     display: flex;

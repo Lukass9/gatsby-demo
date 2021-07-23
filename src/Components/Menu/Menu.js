@@ -247,7 +247,7 @@ const Triangle = styled.div `
 	border-left: 4px solid transparent;
 	border-right: 4px solid transparent;
 	border-bottom: 9px solid white;
-    transform: ${({rotate}) => rotate? "rotate(0deg)" : "rotate(180deg)"};
+    transform: ${({rotate2}) => rotate2? "rotate(0deg)" : "rotate(180deg)"};
     transition: transform .3s;
 `
 const AnchorLinkWithoutDecoration = styled(AnchorLink)` 
@@ -261,7 +261,7 @@ function Menu () {
 
     useEffect(  () => {
             document.onclick = (e)=>{
-                if(e.target.id != "SubMenu" && e.target.id != "Menu"){
+                if(e.target.id !== "SubMenu" && e.target.id !== "Menu"){
                     setsubIsOpen(false);
                     setIsOpen(false);
                 }
@@ -289,7 +289,7 @@ function Menu () {
                 <Ul showMenu = {isOpen}>
                     <Li as={Link} to="/"  activeStyle={{opacity: 1,}}> Koncept SF</Li>
                     <Li as={Link} to="/StacjeZabiegowe" activeStyle={{opacity: 1,}}>Stacje zabiegowe</Li>
-                        <Li id="SubMenu"  onClick={() => setsubIsOpen(!subIsOpen) } >Cennik <Triangle rotate = {subIsOpen}/></Li>
+                        <Li id="SubMenu"  onClick={() => setsubIsOpen(!subIsOpen) } >Cennik <Triangle rotate2 = {subIsOpen}/></Li>
                         <SubMenu openSubMenu = {subIsOpen} >
                             <AnchorLinkWithoutDecoration to="/Cennik#scroll_fitwell" stripHash><SubLi>Stacje fitness & wellness</SubLi></AnchorLinkWithoutDecoration>
                             <AnchorLinkWithoutDecoration to="/Cennik#scroll_cosm" stripHash> <SubLi>Kosmetologia</SubLi> </AnchorLinkWithoutDecoration>

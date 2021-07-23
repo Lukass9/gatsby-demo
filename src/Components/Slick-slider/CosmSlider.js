@@ -1,9 +1,7 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 
 import styled from "styled-components"
 
-import { graphql } from "gatsby"
-import Img from "gatsby-image"
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -112,7 +110,7 @@ function RenderTable( {activeSlide1 ,price ,HifuData, CaviShaperData, caviSahape
         <tbody>
 
           {HifuData.treatmentPlace.map((el,i)=>{ 
-            if(i % 2 == 0){
+            if(i % 2 === 0){
               return(
                   <tr>
                     <Th> {el} </Th> <Td> {HifuData.price[i]} zł</Td> 
@@ -166,12 +164,12 @@ function RenderTable( {activeSlide1 ,price ,HifuData, CaviShaperData, caviSahape
 
               
               function crossedOutPrice() {
-                if (price == (priceForSingleEntry * entry)) {
+                if (price === (priceForSingleEntry * entry)) {
                   return price;
                 } else return (<S> {price} </S>)
               }
 
-              if (i % 2 == 0) {
+              if (i % 2 === 0) {
                 return (
                   <tr>
                     <Th> {entry} </Th> <Td> {priceForSingleEntry} zł</Td> <TdPrice>{crossedOutPrice()} zł</TdPrice> <Td>{priceForSingleEntry * entry} zł</Td>
@@ -287,76 +285,76 @@ class CosmSlider extends Component {
   }
 }
 
-export const query = graphql`
-query {
-  Swan: file(relativePath: { eq: "devices/fitness/Swan.jpg" }) {
-    childImageSharp {
-      fixed(height:200, width:300, quality: 70) {
-        ...GatsbyImageSharpFixed
-      }
-      fluid(quality: 80, maxWidth: 850) {
-        ...GatsbyImageSharpFluid
-      }
-    }
-  }
+// export const query = graphql`
+// query {
+//   Swan: file(relativePath: { eq: "devices/fitness/Swan.jpg" }) {
+//     childImageSharp {
+//       fixed(height:200, width:300, quality: 70) {
+//         ...GatsbyImageSharpFixed
+//       }
+//       fluid(quality: 80, maxWidth: 850) {
+//         ...GatsbyImageSharpFluid
+//       }
+//     }
+//   }
 
-  Vacu: file(relativePath: { eq: "devices/fitness/Vacu.jpg" }) {
-    childImageSharp {
-      fixed(height:200, width:300, quality: 70){
-        ...GatsbyImageSharpFixed
-      }
-      fluid(quality: 80, maxWidth: 850 ) {
-        ...GatsbyImageSharpFluid
-      }
-    }
-  }
+//   Vacu: file(relativePath: { eq: "devices/fitness/Vacu.jpg" }) {
+//     childImageSharp {
+//       fixed(height:200, width:300, quality: 70){
+//         ...GatsbyImageSharpFixed
+//       }
+//       fluid(quality: 80, maxWidth: 850 ) {
+//         ...GatsbyImageSharpFluid
+//       }
+//     }
+//   }
 
 
-  Roll: file(relativePath: { eq: "devices/fitness/RollShaper.jpg" }) {
-    childImageSharp {
-        fixed(height:200, width:300, quality: 70){
-        ...GatsbyImageSharpFixed
-        }
-        fluid(quality: 80, maxWidth: 850 ) {
-          ...GatsbyImageSharpFluid
-        }
-    }
-  }
+//   Roll: file(relativePath: { eq: "devices/fitness/RollShaper.jpg" }) {
+//     childImageSharp {
+//         fixed(height:200, width:300, quality: 70){
+//         ...GatsbyImageSharpFixed
+//         }
+//         fluid(quality: 80, maxWidth: 850 ) {
+//           ...GatsbyImageSharpFluid
+//         }
+//     }
+//   }
 
-  Elektro: file(relativePath: { eq: "devices/wellness/Elektrostzmulacja.jpg" }) {
-    childImageSharp {
-        fixed(height:200, width:300, quality: 70){
-        ...GatsbyImageSharpFixed
-        }
-        fluid(quality: 80, maxWidth: 850 ) {
-          ...GatsbyImageSharpFluid
-        }
-    }
-  }
+//   Elektro: file(relativePath: { eq: "devices/wellness/Elektrostzmulacja.jpg" }) {
+//     childImageSharp {
+//         fixed(height:200, width:300, quality: 70){
+//         ...GatsbyImageSharpFixed
+//         }
+//         fluid(quality: 80, maxWidth: 850 ) {
+//           ...GatsbyImageSharpFluid
+//         }
+//     }
+//   }
 
-  Limfo: file(relativePath: { eq: "devices/wellness/Limfodrenaż.jpg" }) {
-    childImageSharp {
-        fixed(height:200, width:300, quality: 70){
-        ...GatsbyImageSharpFixed
-        }
-        fluid(quality: 80, maxWidth: 850 ) {
-          ...GatsbyImageSharpFluid
-        }
-    }
-  }
+//   Limfo: file(relativePath: { eq: "devices/wellness/Limfodrenaż.jpg" }) {
+//     childImageSharp {
+//         fixed(height:200, width:300, quality: 70){
+//         ...GatsbyImageSharpFixed
+//         }
+//         fluid(quality: 80, maxWidth: 850 ) {
+//           ...GatsbyImageSharpFluid
+//         }
+//     }
+//   }
 
-  Sauna: file(relativePath: { eq: "devices/wellness/sauna.jpg" }) {
-    childImageSharp {
-        fixed(height:200, width:300, quality: 70){
-        ...GatsbyImageSharpFixed
-        }
-        fluid(quality: 80, maxWidth: 850 ) {
-          ...GatsbyImageSharpFluid
-        }
-    }
-  }
-}
-`
+//   Sauna: file(relativePath: { eq: "devices/wellness/sauna.jpg" }) {
+//     childImageSharp {
+//         fixed(height:200, width:300, quality: 70){
+//         ...GatsbyImageSharpFixed
+//         }
+//         fluid(quality: 80, maxWidth: 850 ) {
+//           ...GatsbyImageSharpFluid
+//         }
+//     }
+//   }
+// }
+// `
 
 
 export default CosmSlider;

@@ -58,43 +58,42 @@ const BackgroundSection = ({ className, Bg }) => {
     let title;
     let position;
     let size;
-    if(Bg=="cennik"){
+    if(Bg==="cennik"){
         imageData = data.cennik.childImageSharp.fluid
         title = "CENNIK";
         position = " center 70% ";
         size = " 100% "; 
     }
-    else if(Bg=="fitness"){
+    else if(Bg==="fitness"){
         imageData = data.fitness.childImageSharp.fluid
         title="STACJE FITNESS";
         position = " center 60% ";
         size = " 100% ";
     }
-    else if(Bg=="kontakt"){
+    else if(Bg==="kontakt"){
         imageData = data.kontakt.childImageSharp.fluid
         title="KONTAKT";
         position = " center 85% ";
         size = " 100% ";
     }
-    else if(Bg=="cosm"){
+    else if(Bg==="cosm"){
         imageData = data.cosm.childImageSharp.fluid
         title="KOSMETOLOGIA ESTETYCZNA";
         position = " center 50% ";
         size = " 100% ";
     }
-    else if(Bg=="suplementy"){
+    else if(Bg==="suplementy"){
         imageData = data.suplementy.childImageSharp.fluid
         title="SUPLEMENTY";
         position = " center 85% ";
         size = " 100% ";
     }
-    else if(Bg=="wellnes"){
+    else if(Bg==="wellnes"){
         imageData = data.wellnes.childImageSharp.fluid
         title="STACJE WELLNESS";
         position = " center 20% ";
         size = " 100% ";
     }
-
 
 const BackgroundImageEdit = styled(BackgroundImage)` 
     background-position: ${position};

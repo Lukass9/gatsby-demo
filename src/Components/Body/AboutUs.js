@@ -1,13 +1,6 @@
 import React, { useEffect } from "react"
 import styled from "styled-components"
 
-import FitnessBG from "../BackgroundImg/button/FintessBG"
-import WellnessBG from "../BackgroundImg/button/WellnessBG"
-import KosmetologiaBG from "../BackgroundImg/button/KosmetologiaBG"
-import Suplementy from "../BackgroundImg/button/Suplementy"
-import CennikButtonBG from "../BackgroundImg/button/CennikButtonBG"
-import KontaktBG from "../BackgroundImg/button/KontaktBG"
-
 import BackgroundButton from "../BackgroundImg/button/BackgroundButton"
 
 import { gsap } from "gsap";
@@ -57,9 +50,7 @@ const H1Header = styled.h1`
 const AboutUs = () => {
 
  useEffect(()=>{
-   const Button = document.querySelectorAll('.buttonAboutUs');
- 
-   
+    
     //  gsap.fromTo(".buttonAboutUs", {scale: 1.5, opacity: 0, }, 
     //  {scale: 1, opacity: 1, duration: 1, stagger: .3, scrollTrigger:{
     //    trigger: ".buttonAboutUs",

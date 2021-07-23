@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import styled from "styled-components"
-import { Icon, InlineIcon } from '@iconify/react';
+import { Icon } from '@iconify/react';
 
 import P from "../Styled/PIndex"
 
@@ -9,7 +9,6 @@ import calendarCheck from '@iconify/icons-fa-solid/calendar-check';
 import femaleIcon from '@iconify/icons-fa-solid/female';
 import scissorsIcon from '@iconify/icons-entypo/scissors';
 import smileBeam from '@iconify/icons-fa-solid/smile-beam';
-import { theme } from "../../utils/theme";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";

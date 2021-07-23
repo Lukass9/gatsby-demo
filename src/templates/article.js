@@ -5,7 +5,6 @@ import styled from "styled-components"
 import Markdown from 'react-markdown'
 
 import Button from "../Components/Button/Button1"
-import { theme } from '../utils/theme'
 
 
 const Wrapper = styled.div ` 

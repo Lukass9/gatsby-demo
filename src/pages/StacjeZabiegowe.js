@@ -3,7 +3,7 @@ import {Link} from "gatsby"
 import Layout from "../layout/Layout"
 import styled from "styled-components"
 
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
 

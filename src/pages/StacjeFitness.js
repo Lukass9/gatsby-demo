@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import {Link} from "gatsby" 
 import Layout from "../layout/Layout"
 import styled from "styled-components"
 import Modal from "../Components/Modal/Modal1"
@@ -7,96 +6,17 @@ import Modal from "../Components/Modal/Modal1"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
+import { FitnessDataDevice } from "../Components/DeviceDescriptions/Data";
+import { WelnessDataDevice } from "../Components/DeviceDescriptions/Data";
+import DescribeDevice2 from "../Components/DeviceDescriptions/DescribeDevice";
+
 import H1 from "../Components/H1/H1"
 
-import { FitnessDevice } from "../Components/Data/DataDevice"
-import { deviceImageSwan } from "../Components/Data/DataDevice"
-import { deviceImage } from "../Components/Data/DataDevice"
-
-// const H1 = styled.h1 ` 
-//     width: 100%;
-//     background-color: #f8f9fa;
-//     padding: 20px;
-
-//     text-align: center;
-//     font-size: 2.5rem;
-//     font-weight: 500;
-//     color: #e67817;
-// `
 
 const PhotoWrapp = styled.div ` 
     display: flex;
     flex-flow: column;
     align-items: center;
-`
-
-const DescribeDevice = styled.div `
-  margin-bottom: 20px;
-  
-  ${({theme}) => theme.media.tablet}{
-      padding: 0 15%;
-    }
-`
-
-const H2 = styled.h2 ` 
-    font-size: 6vw;
-    font-weight: 500;
-    color: #e67817;
-
-    ${({theme}) => theme.media.desktop}{
-      font-size: 1.4vw;
-    }
-`
-const H2Right = styled(H2) ` 
-  text-align: end;
-`
-const GatsbyImg = styled(Img) ` 
-  border-radius: 50%;
-  float: left;
-  /* shape-outside: ellipse(150px 100px at 50% 50%); */
-  shape-outside: ellipse(160px 150px at 35% 30%);
-  transform: scale(.9) translateX(-10vw);
-  transition: transform 0.5s;
-  
-  ${({theme}) => theme.media.tablet}{
-    /* shape-outside: ellipse(150px 100px at 50% 50%); */
-    shape-outside: none;
-    transform: scale(1) translateX(0px);
-    ${DescribeDevice}:hover &{
-      transform: scale(1.2)  translateX(-25px);
-    }
-  }
-
-  z-index: 0;
- 
-`
-const GatsbyImgRight = styled(GatsbyImg) ` 
-  float: right;
-  transform: translateX(10vw);
-
-  shape-outside: ellipse(150px 150px at 55% 50%);
-
-  ${({theme}) => theme.media.tablet}{
-    /* shape-outside: ellipse(150px 100px at 50% 50%); */
-    shape-outside: none;
-    transform: scale(1) translateX(0px);
-    ${DescribeDevice}:hover &{
-      transform: scale(1.2)  translateX(25px);
-    }
-  }
-
-`
-// const ImgSwan = styled(GatsbyImg) ` 
-//   display: block;
-//   margin:0;
-//   shape-outside: polygon(269px 57px, 71.17% 16.06%, 51.58% 10.42%, 49.02% 40.84%, 23.73% 30.6%, 23.21% 41.04%, 28.14% 57.06%, 25.39% 78.86%, 104px 212px, 55.08% 81.62%, 75.69% 74.15%, 73.98% 60.98%, 73.11% 51.86%, 271px 90px);
-//   z-index: 1;
-// `
-
-const P = styled.p ` 
-  padding: 0px 20px;
-  text-align: justify;
-  z-index: 5;
 `
 
 const Wrapp = styled.div ` 
@@ -213,35 +133,35 @@ const SaunaBenefits = [
   ]
 
 
-function OpenModal({ModalImg,data, exitModal ,isOpen, device }){
+function OpenModal({ModalImg,data, exitModal ,isOpen, device}){
 
-  let resolut = null;
-  let benefit = null;
+  let resolut = device.resoluts;
+  let benefit = device.benefits;
 
-  if(device === "Swan") {
-    resolut = SwanResoluts;
-    benefit = SwanBenefits;
-  }
-  else if(device === "Vacu") {
-    resolut = VacuResoluts;
-    benefit = VacuBenefits;
-  }
-  else if(device === "Roll") {
-    resolut = RollResoluts;
-    benefit = RollBenefits;
-  }
-  else if(device === "Elektro") {
-    resolut = ElektroResoluts;
-    benefit = ElektroBenefits;
-  }
-  else if(device === "Limfo") {
-    resolut = LimfoResoluts;
-    benefit = LimfoBenefits;
-  }
-  else if(device === "Sauna") {
-    resolut = SaunaResoluts;
-    benefit = SaunaBenefits;
-  }
+  // if(device === "Swan") {
+  //   resolut = SwanResoluts;
+  //   benefit = SwanBenefits;
+  // }
+  // else if(device === "Vacu") {
+  //   resolut = VacuResoluts;
+  //   benefit = VacuBenefits;
+  // }
+  // else if(device === "Roll") {
+  //   resolut = RollResoluts;
+  //   benefit = RollBenefits;
+  // }
+  // else if(device === "Elektro") {
+  //   resolut = ElektroResoluts;
+  //   benefit = ElektroBenefits;
+  // }
+  // else if(device === "Limfo") {
+  //   resolut = LimfoResoluts;
+  //   benefit = LimfoBenefits;
+  // }
+  // else if(device === "Sauna") {
+  //   resolut = SaunaResoluts;
+  //   benefit = SaunaBenefits;
+  // }
 
 
   if(isOpen){
@@ -250,7 +170,7 @@ function OpenModal({ModalImg,data, exitModal ,isOpen, device }){
       resoluts = {resolut} 
       benefits = {benefit} 
       exitModal = {exitModal}
-      device= {device}
+      device= {device.shortName}
       />
   }
   
@@ -267,36 +187,26 @@ function ModalImg ( {data, device} ) {
 }
 
 
-
-
 ///////////////////////////////RENDER///////////////////////////////////////
 
 const StacjeFitness = ( {data} ) => {
 
-  console.log("data to:");
-  console.log(data);
-
-  function ShowGatsbyImg ( {data, device} ) {
-    if(device === "Swan") return <GatsbyImg fluid ={data.Swan.childImageSharp.fluid} alt="Swan" />
-    else if(device === "Vacu") return <GatsbyImg fluid ={data.Vacu.childImageSharp.fluid} alt="Vacu" />
-    else if(device === "Roll") return <GatsbyImg fluid ={data.Roll.childImageSharp.fluid} alt="Roll" />
-    else if(device === "Elektro") return <GatsbyImg fluid ={data.Elektro.childImageSharp.fluid} alt="Elektro" />
-    else if(device === "Limfo") return <GatsbyImg fluid ={data.Limfo.childImageSharp.fluid} alt="Limfo" />
-    else if(device === "Sauna") return <GatsbyImg fluid ={data.Sauna.childImageSharp.fluid} alt="Sauna" />
-    else return <GatsbyImg fluid ={data.Swan.childImageSharp.fluid} alt="Swan" />
-  }
+const FitnessImageDevice = [ 
+  (data.Swan.childImageSharp.fixed),
+  (data.Vacu.childImageSharp.fixed),
+  (data.Roll.childImageSharp.fixed)
+] 
+const WellnessImageDevice = [ 
+  (data.Elektro.childImageSharp.fixed),
+  (data.Limfo.childImageSharp.fixed),
+  (data.Sauna.childImageSharp.fixed)
+] 
 
   const [isOpen, setIsOpen] = useState(false);
   const [device, setDevice] = useState("Swan");
 
-  // console.log(device);
-
   const exitModal = () => {
     setIsOpen(!isOpen)
-  }
-
-  const setImgDevice = (device) => {
-    setDevice(device)
   }
 
 function setModal(device) {
@@ -316,71 +226,37 @@ function setModal(device) {
     <Wrapp isOpen = {isOpen}>
       <Layout>
 
-
-      {/* <H1>STREFA FITNESS</H1> */}
-      {/* <PhotoWrapp> */}
-      
-      {/* {({data})=> (ShowGatsbyImg( {data} ,"Roll" )) } */}
-
-      {/* {FitnessDevice.map( ({name, description, shortName, path}) => ( */}
-          {/* <DescribeDevice onClick = {()=> setModal(`${shortName}`)} > */}
-
-            {/* {console.log("--------------------------------------")} */}
-            {/* {console.log(data.Roll.childImageSharp.fixed)} */}
-            {/* {console.log( deviceImage({data}, "Swan") ) } */}
-            {/* {ShowGatsbyImg( {data, shortName} ) } */}
-            {/* {<GatsbyImg fixed ={data.Roll.childImageSharp.fixed} alt="Roll"/>  } */}
-            {/* <GatsbyImg fluid = {deviceImage({data}, "Swan"))} alt="Swan"/> */}
-            {/* <H2>{name}</H2> */}
-            {/* <P>{description}</P> */}
-          {/* </DescribeDevice> */}
-      {/* ))} */}
-      {/* </PhotoWrapp> */}
-
-
-
-
-
           <H1>STREFA FITNESS</H1>
           <PhotoWrapp>
-            <DescribeDevice onClick = {(device)=> setModal("Swan")} >
-              <GatsbyImg fixed ={data.Swan.childImageSharp.fixed} alt="Swan"/>
-              <H2>Swan Shaper</H2>
-              <P>Swan Shaper wykorzystuje działanie lamp podczerwonych, eliptyka skrętnego, światła kolagenowego oraz jonizacji. W efekcie poprawiamy odżywienie skóry, redukujemy cellulit i tkankę tłuszczową oraz ujędrniamy i modelujemy sylwetkę.Zabiegów na Swan Shaper nie rekomendujemy m.in. osobom z cukrzycą, epilepsją, chorobami serca, osobom o wadzę powyżej 90 kilogramów, a także kobietom w trakcie miesiączki i w ciąży.</P>
-            </DescribeDevice>
-
-            <DescribeDevice onClick = {(device)=> setModal("Vacu")}>
-              <GatsbyImgRight fixed ={data.Vacu.childImageSharp.fixed} alt="Vacu"/>
-              <H2Right>Vacu Shaper</H2Right>
-              <P>POGROMCA CELLULITU to specjalistyczne urządzenie łączy rezultaty wysiłku fizycznego i działania podciśnienia. Ćwicząc na Vacu Shaper spalamy cztery razy szybciej tkankę tłuszczową.</P>
-            </DescribeDevice>
-
-            <DescribeDevice onClick = {(device)=> setModal("Roll")}>
-              <GatsbyImg fixed ={data.Roll.childImageSharp.fixed} alt="Roll"/>  
-              <H2>Roll Shaper</H2>
-              <P>Rollmasaż jest gwarancją intensywnego a zarazem relaksacyjnego masażu, który doskonale ujędrnia ciało, poprawiając krążenie, usuwa z organizmu toksyny, a przede wszystkim skutecznie redukuje cellulit.</P>
-            </DescribeDevice>
+            
+            {FitnessDataDevice.map( (el,i) => 
+              <DescribeDevice2
+                onClick = {()=> setModal(el)}
+                img = {FitnessImageDevice[i]} 
+                data = {el}
+                isEven ={i%2}
+             />
+            )}
+            
           </PhotoWrapp>
 
           <H1>STREFA WELLNES</H1>
           <PhotoWrapp>
-            <DescribeDevice onClick = {(device)=> setModal("Elektro")}>
-              <GatsbyImg fixed ={data.Elektro.childImageSharp.fixed} alt="Elektro"/>
-              <H2>Elektrostymulacja</H2>
-              <P>Elektrostymulacja mięśni to zabieg elektroleczniczy, zwany również elektrogimnastyką. Jest skuteczny w walce z cellulitem, poprawia elastyczność skóry, przyspiesza spalanie tkanki tłuszczowej.</P>
-            </DescribeDevice>
-            
-            <DescribeDevice onClick = {(device)=> setModal("Limfo")}>
-              <GatsbyImgRight fixed ={data.Limfo.childImageSharp.fixed}  alt="Limfo"/>
-              <H2Right>Limfodrenaż</H2Right>
-              <P>Zabiegi wpływające bardzo głęboko na problematyczne partie ciała. Zapobiega chorobom zapalnym czy chłonnym a także zwalcza cellulit, żylaki, obrzęki pourazowe i nadwagę. Poprawia krążenie krwi i limfy.</P>
-            </DescribeDevice>
-            
-            <DescribeDevice onClick = {(device)=> setModal("Sauna")}>
+
+            {WelnessDataDevice.map( (el,i) => 
+                <DescribeDevice2
+                  onClick = {()=> setModal(el)}
+                  img = {WellnessImageDevice[i]} 
+                  data = {el}
+                  isEven ={i%2}
+              />
+              )}
+
+            {/* <DescribeDevice onClick = {()=> setModal("Sauna")}>
               <GatsbyImg fixed ={data.Sauna.childImageSharp.fixed} alt="Sauna"/>
               <H2>Sauna</H2>
               <P>W przypadku sauny Infrared, za ogrzanie ciała odpowiadają promienniki podczerwieni, które wytwarzają fale podczerwone wnikające nawet do 4,5 cm pod skórę rozgrzewając tym samym nasze ciało.</P>
-            </DescribeDevice>
+            </DescribeDevice> */}
 
           </PhotoWrapp>
       </Layout>

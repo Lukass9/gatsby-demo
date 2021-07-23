@@ -1,6 +1,5 @@
 import * as React from "react"
-import styled, { keyframes } from "styled-components"
-import Img from "gatsby-image"
+import styled from "styled-components"
 
 
 import Circle2 from "./ProductCircle2"
@@ -8,6 +7,7 @@ import ProductPrice from "./ProductPrice"
 import ProductSlide from "./ProductSlide"
 
 import PriceTag from "../../images/entypo_price-tag.svg"
+
 
 
 const Wrapp = styled.div` 
@@ -42,11 +42,8 @@ const CircleShape = styled.div `
     shape-outside: circle(19% at -5px 39px);
   }
 `
-const cena = "169 zł";
-const opis = "Młody jęczmień to bogaty w witaminy i minerały suplement w formie płynnej, składający się z bioaktywnego ekstraktu z dodatkiem soku z jabłek oraz ksylitolu. Jest produktem całkowicie naturalnym mającym na celu  przyspieszenie przemiany materii oraz detoksykację organizmu, co w znaczący sposób wpływa na spalanie  zbędnej tkanki tłusczowej. Najlepiej stosować w połączeniu z Go Clean.";
 
-
-const WrappCircle = ( { img } ) => (
+const WrappCircle = ( { img , YoungBarley } ) => (
     <Wrapp>
         <Circle2>
             {img}
@@ -54,14 +51,14 @@ const WrappCircle = ( { img } ) => (
         <H1Product> Młody Jęczmień </H1Product>
 
         <ProductPrice>
-            <img src={PriceTag} />
-            <p> {cena} </p>
+            <img src={PriceTag} alt= {YoungBarley.alternative} />
+            <p> {YoungBarley.price} </p>
         </ProductPrice>
 
         <ProductSlide>
             <CircleShape />
             <h1> Młody Jęczmień </h1>
-            <p> {opis} </p>
+            <p> {YoungBarley.description} </p>
         </ProductSlide>
     </Wrapp>
 )

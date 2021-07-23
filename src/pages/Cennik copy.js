@@ -1,9 +1,8 @@
 import * as React from "react"
-import { Link } from "gatsby"
 import Layout from "../layout/Layout"
 import styled, { keyframes } from "styled-components"
 
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
 import CennikBg from "../Components/BackgroundImg/header/CennikBg"
@@ -72,41 +71,7 @@ const bonce = keyframes`
 `
 
 
-const productDescription = keyframes` 
-  /* 0% {
-    transform:  scale3d(1, 1, 1)
-                translateX(0%)
-                translateY(0%)
-                ;
-  }
-  50% {
-    transform:  scale3d(40, 1, 1)
-                translateX(55%)
-                translateY(0%)
-                ;
-  }
-  100% {
-    transform:  scale3d(40, 20, 1)
-                translateX(55%)
-                translateY(50%)
-                ; */
 
-  0% {
-    border-radius: 0 0% 0% 0%;
-    width: 0;
-    height: 0;
-  }
-  50% {
-    border-radius: 0 25% 0% 0%;
-    width: 40vw;
-    height: 5vw;
-  }
-  100% {
-    border-radius: 0 25% 25% 25%;
-    width: 40vw;
-    height: 20vw;
-  }
-`
 
 const WrappCircle = styled.div` 
   position: relative;
@@ -259,7 +224,6 @@ const Pprice = styled.p `
   color: #e67817;
 
 `
-const text = "Ale ma kota";
 const Cennik = ({ data }) => (
 
   <Layout>

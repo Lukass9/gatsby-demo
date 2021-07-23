@@ -1,14 +1,12 @@
 import React, { useEffect } from "react"
-import { Link } from "gatsby"
 import Layout from "../layout/Layout"
-import styled, { keyframes } from "styled-components"
+import styled from "styled-components"
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
-import { wrap } from "gsap/gsap-core";
 
 import Title from "../Components/Header/indexTitle"
 import Concept from "../Components/Body/Concept";
@@ -174,10 +172,3 @@ query {
 `
 
 export default IndexPage
-
-
-{/* <Wrapp>
-        <Text className = "scroll" data-animation = '1'> #MIEJSCE KOBIET </Text>
-        <GatsbyImg fluid = {data.Roll.childImageSharp.fluid} alt ="roll"/> 
-      </Wrapp>
-      <ExampleDistance/> */}
