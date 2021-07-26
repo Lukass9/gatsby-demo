@@ -302,7 +302,7 @@ function Menu () {
                     <Li>Wspomnienia ;)</Li>
                     <Li as={Link} to="/Wskazowki">Wskazówki</Li>
                     <Li>Kadra</Li>
-                    <Li>Kontakt</Li>
+                    <Li as={Link} to="/Kontakt">Kontakt</Li>
                 </Ul>         
             </Wrapp>
         </StyledMenu>

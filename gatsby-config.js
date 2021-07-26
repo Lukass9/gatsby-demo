@@ -43,6 +43,7 @@ module.exports = {
           `Newsreader\:200,400,400i`,
           `Alegreya`,
           `Caveat`,
+          `Italianno`
         ],
         display: 'swap'
       }

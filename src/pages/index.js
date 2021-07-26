@@ -62,7 +62,8 @@ const Text = styled.p`
   }
 `
 
-const MapWrapp = styled.div` 
+const Iframe = styled.iframe` 
+  border: 0px;
   width: 100%;
   height: 40vh;
 `
@@ -130,10 +131,10 @@ const IndexPage = ({ data }) => {
       <AboutUs />
       <Contact />
 
-      <MapWrapp>
+      {/* <MapWrapp>
         <GoogleMap />
-      </MapWrapp>
-
+      </MapWrapp> */}
+      <Iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10015.906541790206!2d17.03612!3d51.127339!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa94ef3beb6b3c7d3!2sStudio%20Figura%20Trzebnicka!5e0!3m2!1spl!2spl!4v1627271785544!5m2!1spl!2spl" allowfullscreen="" loading="lazy"></Iframe>
     </Layout>
   )
 }
