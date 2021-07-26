@@ -20,8 +20,8 @@ const Price = styled.div`
             font-size: 3.8vw;
             position: absolute;
             width: 60%;
-            top: 7vw;
-            left: 10.5vw;
+            top: 8vw;
+            left: 11vw;
             color: #e67817;
             transform: rotate(25deg);
 

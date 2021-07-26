@@ -21,12 +21,12 @@ const Circle = styled.button`
 
   :hover{
     margin-bottom: 50%;
-
+  
     ${({theme})=>theme.media.tablet}{
       margin-bottom: 6%;
     }
     & + h1 + div {
-      transform:  rotate(60deg) translateY(50%);
+      transform:  rotate(60deg) translateY(60%);
     }
 
     & + h1 + div + div {
@@ -60,7 +60,7 @@ const Circle = styled.button`
       margin-bottom: 6%;
     }
     & + h1 + div {
-      transform:  rotate(60deg) translateY(50%);
+      transform:  rotate(60deg) translateY(60%);
     }
 
     & + h1 + div + div {

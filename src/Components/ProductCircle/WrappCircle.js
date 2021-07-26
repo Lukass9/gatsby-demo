@@ -39,7 +39,7 @@ const CircleShape = styled.div `
   shape-outside: circle(53% at -5px 39px);
 
   ${({theme})=> theme.media.tablet}{
-    shape-outside: circle(19% at -5px 39px);
+    shape-outside: circle(23% at -5px 39px);
   }
 `
 
