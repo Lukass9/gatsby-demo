@@ -2,11 +2,7 @@ import React from "react"
 import Layout from "../layout/Layout"
 import styled from "styled-components"
 
-import { graphql } from "gatsby"
-import Img from "gatsby-image"
-
 import KontaktBg from "../Components/BackgroundImg/header/KontaktBg"
-import GoogleMap from "../Components/Maps/Map"
 
 const Wrapp = styled.div ` 
   display: flex;
@@ -49,7 +45,6 @@ const WrappColumn  = styled.div `
   margin: 0 2vw;
 
 `
-
 
 const Iframe = styled.iframe` 
   border: 0px;

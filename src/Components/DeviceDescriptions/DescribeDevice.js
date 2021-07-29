@@ -21,6 +21,7 @@ const DescribeDevice = styled.div `
 `
 
 const H2 = styled.h2 ` 
+    position: relative;
     font-size: 6vw;
     font-weight: 500;
     color: #e67817;
@@ -34,6 +35,7 @@ const H2 = styled.h2 `
 `
 
 const P = styled.p ` 
+  position: relative;
   padding: 0px 20px;
   text-align: justify;
   z-index: 5;
@@ -43,7 +45,7 @@ const GatsbyImg = styled(Img) `
   border-radius: 50%;
   float: ${({isEven}) => isEven? "right" : "left" };
 
-  shape-outside: ellipse(160px 150px at 35% 30%);
+  shape-outside: ellipse(25vw 35vw at 40% 35%);
   transform:  ${({isEven}) => isEven? "translateX(10vw)" : "scale(.9) translateX(-10vw)" };
   transition: transform 0.5s;
   
@@ -55,7 +57,9 @@ const GatsbyImg = styled(Img) `
     } */
   }
 
-  z-index: 0;
+  & + img{
+    z-index: 0;
+  }
 `
 
 const DescribeDevice2 = ( {img, data, onClick, isEven} ) =>(

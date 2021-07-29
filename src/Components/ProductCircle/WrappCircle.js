@@ -39,26 +39,26 @@ const CircleShape = styled.div `
   shape-outside: circle(53% at -5px 39px);
 
   ${({theme})=> theme.media.tablet}{
-    shape-outside: circle(23% at -5px 39px);
+    shape-outside: circle(25% at -0.45vw 2vw);
   }
 `
 
-const WrappCircle = ( { img , YoungBarley } ) => (
+const WrappCircle = ( { img , Suplement } ) => (
     <Wrapp>
         <Circle2>
             {img}
         </Circle2>
-        <H1Product> Młody Jęczmień </H1Product>
+        <H1Product> {Suplement.name} </H1Product>
 
         <ProductPrice>
-            <img src={PriceTag} alt= {YoungBarley.alternative} />
-            <p> {YoungBarley.price} </p>
+            <img src={PriceTag} alt= {Suplement.alternative} />
+            <p> {Suplement.price} </p>
         </ProductPrice>
 
         <ProductSlide>
             <CircleShape />
-            <h1> Młody Jęczmień </h1>
-            <p> {YoungBarley.description} </p>
+            <h1>{Suplement.name} </h1>
+            <p> {Suplement.description} </p>
         </ProductSlide>
     </Wrapp>
 )

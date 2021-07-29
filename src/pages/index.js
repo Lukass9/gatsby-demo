@@ -14,9 +14,6 @@ import WithUs from "../Components/Body/WithUs"
 import AboutUs from "../Components/Body/AboutUs"
 import Contact from "../Components/Body/Contact"
 
-import GoogleMap from "../Components/Maps/Map"
-
-
 gsap.registerPlugin(ScrollTrigger);
 
 
