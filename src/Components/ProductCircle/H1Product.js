@@ -7,7 +7,7 @@ const H1Product = styled.h1`
   top: 0%;  
   color: #e67817;
   font-size: 15px;
-  text-shadow: 0px 1vw 13px rgba(230, 120, 23, 0.4);
+  /* text-shadow: 0px 1vw 13px rgba(230, 120, 23, 0.4); */
 
   transition: transform .8s .1s;
 

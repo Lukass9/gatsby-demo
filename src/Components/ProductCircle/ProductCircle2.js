@@ -81,7 +81,8 @@ const Circle = styled.button`
     ${({theme})=>theme.media.tablet}{
       margin-bottom: 6%;
     }
-    & ~ .ProductPrice__Price-eQpVYr{
+    
+    & ~ ${ProductPrice}{
       transform:  rotate(60deg) translateY(60%);
     }
 
