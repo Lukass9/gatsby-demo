@@ -20,6 +20,14 @@ const FlexWrapp = styled.section`
     grid-template-rows: repeat(3, .5fr);
     grid-column-gap: 10px;
     grid-row-gap: 10px; 
+/* 
+     :nth-child(1){ grid-area: 1 / 3 / 2 / 6; }
+     :nth-child(2){ grid-area: 2 / 3 / 3 / 4; }
+     :nth-child(3){ grid-area: 2 / 4 / 3 / 5; } 
+     :nth-child(4){ grid-area: 2 / 5 / 3 / 6; } 
+     :nth-child(5){ grid-area: 3 / 3 / 4 / 4; } 
+     :nth-child(6){ grid-area: 3 / 4 / 4 / 5; } 
+     :nth-child(7){ grid-area: 3 / 5 / 4 / 6; }  */
   }
 `
 const H1Header = styled.h1` 
@@ -36,6 +44,14 @@ const H1Header = styled.h1`
   ${({theme})=>theme.media.tablet}{
     grid-area: 1 / 3 / 2 / 6;
     font-size: 5vw;
+
+     /* :nth-child(1){ grid-area: 1 / 3 / 2 / 6; } */
+     /* &:nth-child(0){ grid-area: 2 / 3 / 3 / 4; }
+     &:nth-child(1){ grid-area: 2 / 4 / 3 / 5; } 
+     &:nth-child(2){ grid-area: 2 / 5 / 3 / 6; } 
+     &:nth-child(3){ grid-area: 3 / 3 / 4 / 4; } 
+     &:nth-child(4){ grid-area: 3 / 4 / 4 / 5; } 
+     &:nth-child(5){ grid-area: 3 / 5 / 4 / 6; }  */
 
     &+section{ grid-area: 2 / 3 / 3 / 4; } 
     &+section+section{ grid-area: 2 / 4 / 3 / 5; } 
@@ -59,7 +75,8 @@ const AboutUs = () => {
     //   // markers: true,
     //  }})
 
-     gsap.fromTo(".buttonAboutUs", {y: -20, opacity: 0, }, 
+     gsap.fromTo(".buttonAboutUs", 
+     {y: -20, opacity: 0, }, 
      {y: 0, opacity: 1, duration: 1, stagger: .3, ease: "power3.InOut", scrollTrigger:{
        trigger: ".buttonAboutUs",
        start: 'top 60%',

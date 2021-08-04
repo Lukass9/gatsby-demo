@@ -5,31 +5,16 @@ import styled from "styled-components"
 import Circle2 from "./ProductCircle2"
 import ProductPrice from "./ProductPrice"
 import ProductSlide from "./ProductSlide"
+import H1 from "./H1"
+import P from "./P"
+import H1Product from "./H1Product"
 
 import PriceTag from "../../images/entypo_price-tag.svg"
 
-
-
 const Wrapp = styled.div` 
+  display: flex;
   position: relative;
   z-index: 1;
-`
-const H1Product = styled.h1` 
-  position: absolute;
-  opacity: 0;
-  left: 8vw;
-  top: 8%;  
-  color: #e67817;
-  font-size: 20px;
-
-  transition: transform .4s .4s,
-              opacity .5s .3s;
-
-  z-index: -1;
-
-  ${({theme}) => theme.media.tablet}{
-    font-size: 32px;
-  }
 `
 const CircleShape = styled.div ` 
   border-radius: 100%;
@@ -42,6 +27,29 @@ const CircleShape = styled.div `
     shape-outside: circle(25% at -0.45vw 2vw);
   }
 `
+
+// const H1 = styled.h1 ` 
+//   color: #e67817;
+//   font-size: 5vw;
+//   transform: translateX(-30vw);
+//   transition: transform .6s .6s;
+
+//   ${({theme})=>theme.media.tablet}{
+//       font-size: 2vw;
+//   }
+// `
+
+// const P = styled.p ` 
+//   padding-left: 8px;
+//   font-size: 3.2vw;
+//   transform: translateX(-70vw);
+//   transition: transform .6s 1s;
+
+//   ${({theme})=>theme.media.tablet}{
+//       font-size: 1vw;
+//   }
+// `
+ 
 
 const WrappCircle = ( { img , Suplement } ) => (
     <Wrapp>
@@ -57,8 +65,8 @@ const WrappCircle = ( { img , Suplement } ) => (
 
         <ProductSlide>
             <CircleShape />
-            <h1>{Suplement.name} </h1>
-            <p> {Suplement.description} </p>
+            <H1>{Suplement.name} </H1>
+            <P> {Suplement.description} </P>
         </ProductSlide>
     </Wrapp>
 )

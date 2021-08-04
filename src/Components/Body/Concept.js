@@ -81,8 +81,8 @@ const Concept = () => {
 
         if(window.innerWidth < 1024){
             divSelectors.forEach(element => {
-                gsap.fromTo(element.children, {scale: 3, filter: "blur(12px)", opacity: 0}, 
-                {scale: 1, opacity: 1, filter: "blur(0px)", stagger: 0.2, duration: 1, ease: 'easeInOut', 
+                gsap.fromTo(element.children, {scale: 2, opacity: 0}, 
+                {scale: 1, opacity: 1, stagger: 0.2, duration: 0.7, ease: 'easeInOut', 
                 scrollTrigger: {
                     trigger: element,
                     start: 'top bottom',

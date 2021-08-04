@@ -3,10 +3,13 @@ import styled from "styled-components"
 
 const ProductSlid = styled.div`
     position: absolute;
+    overflow: auto;
     top: 8vw;
     left: 28vw;
-    /* background-color: #dbdbdb; */
+
     background-color: #eee;
+    /* box-shadow: inset -100px -250px 50px -280px rgba(186,186,186,1); */
+    box-shadow: -3px 3px 10px -5px rgba(0,0,0,0.75);
     width: 5px;
     height: 80px;
     overflow:  hidden;
@@ -22,7 +25,7 @@ const ProductSlid = styled.div`
         left: 17vw;
     }
     
-    & > h1 {
+    /* & > h1 {
         color: #e67817;
         font-size: 5vw;
         transform: translateX(-30vw);
@@ -31,7 +34,6 @@ const ProductSlid = styled.div`
         ${({theme})=>theme.media.tablet}{
             font-size: 2vw;
         }
-
     }
 
     & > p {
@@ -43,6 +45,6 @@ const ProductSlid = styled.div`
         ${({theme})=>theme.media.tablet}{
             font-size: 1vw;
         }
-    }
+    } */
 `
 export default ProductSlid;
