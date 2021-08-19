@@ -67,10 +67,6 @@ const cosmeticsImage = [
   (data.KremDoRak.childImageSharp.fluid)
 ]
 
-const circle = document.querySelectorAll(".Circle");
-
-console.log(window);
-
   const [switchButton, setSwitchButton] = useState(true);
 
   useEffect(()=> {
@@ -106,13 +102,7 @@ console.log(window);
 
       <button onClick = { ()=> {
         setSwitchButton(!switchButton)
-        // circle.forEach(el=>{
-        //   el.removeEventListener("mouseover", play)
-        //   el.removeEventListener("mouseleave", reverse)
-        //   el.removeEventListener("focus", playAndRemove);
-        //   el.removeEventListener("blur", reverseAndAdd);
-        // })
-
+ 
       }} > zmień </button>
 
       {switchButton ? Suplements.map((Suplement, i)=>(
