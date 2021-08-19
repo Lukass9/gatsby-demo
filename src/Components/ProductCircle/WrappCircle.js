@@ -1,4 +1,5 @@
-import * as React from "react"
+import React from "react"
+// import React, { useEffect } from "react"
 import styled from "styled-components"
 
 
@@ -11,65 +12,53 @@ import H1Product from "./H1Product"
 
 import PriceTag from "../../images/entypo_price-tag.svg"
 
+
 const Wrapp = styled.div` 
   display: flex;
   position: relative;
   z-index: 1;
+
 `
 const CircleShape = styled.div ` 
   border-radius: 100%;
-  width: 35vw;
-  height: 35vw;
+  width: 25vw;
+  height: 25vw;
   float:left;
-  shape-outside: circle(53% at -5px 39px);
+  /* shape-outside: circle(53% at -5px 39px); */
+  shape-outside: circle(79.23% at -10% 30%);
 
   ${({theme})=> theme.media.tablet}{
-    shape-outside: circle(25% at -0.45vw 2vw);
+    width: 15vw;
+    height: 15vw;
+    /* shape-outside: circle(25% at -0.45vw 2vw); */
+    shape-outside: circle(51.04% at -1.38vw 3.47vw);
   }
-`
+  `
 
-// const H1 = styled.h1 ` 
-//   color: #e67817;
-//   font-size: 5vw;
-//   transform: translateX(-30vw);
-//   transition: transform .6s .6s;
+const WrappCircle = ( { img , Suplement } ) => {
 
-//   ${({theme})=>theme.media.tablet}{
-//       font-size: 2vw;
-//   }
-// `
+    return(
+        <Wrapp className= "ProductWrapp">
+            <Circle2 
+            className= "Circle">
+                {img}
+            </Circle2>
+            <H1Product className= "H1Product"> {Suplement.name} </H1Product>
 
-// const P = styled.p ` 
-//   padding-left: 8px;
-//   font-size: 3.2vw;
-//   transform: translateX(-70vw);
-//   transition: transform .6s 1s;
+            <ProductPrice  className= "ProductPrice">
+                <img src={PriceTag} alt= {Suplement.alternative} />
+                <p> {Suplement.price} </p>
+            </ProductPrice>
 
-//   ${({theme})=>theme.media.tablet}{
-//       font-size: 1vw;
-//   }
-// `
- 
+            <ProductSlide className= "ProductSlide">
+                <CircleShape />
+                <H1 className= "ProductName">{Suplement.name} </H1>
+                <P className= "ProductParagraph"> {Suplement.description} </P>
+            </ProductSlide>
+        </Wrapp>
+    )
+}
 
-const WrappCircle = ( { img , Suplement } ) => (
-    <Wrapp>
-        <Circle2>
-            {img}
-        </Circle2>
-        <H1Product> {Suplement.name} </H1Product>
-
-        <ProductPrice>
-            <img src={PriceTag} alt= {Suplement.alternative} />
-            <p> {Suplement.price} </p>
-        </ProductPrice>
-
-        <ProductSlide>
-            <CircleShape />
-            <H1>{Suplement.name} </H1>
-            <P> {Suplement.description} </P>
-        </ProductSlide>
-    </Wrapp>
-)
 
 export default WrappCircle;
 

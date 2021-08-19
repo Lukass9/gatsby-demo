@@ -8,9 +8,7 @@ const H1Product = styled.h1`
   color: #e67817;
   font-size: 15px;
   /* text-shadow: 0px 1vw 13px rgba(230, 120, 23, 0.4); */
-
-  transition: transform .8s .1s;
-
+  /* transition: transform .8s .1s; */
   z-index: -1;
 
   ${({theme}) => theme.media.tablet}{

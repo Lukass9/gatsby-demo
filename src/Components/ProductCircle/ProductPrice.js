@@ -34,7 +34,7 @@ const Price = styled.div`
     }
 
 
-    transition: transform .8s ease-out;
+    /* transition: transform .8s ease-out; */
     z-index: -1;
 `
 export default Price;

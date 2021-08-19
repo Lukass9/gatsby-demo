@@ -28,26 +28,19 @@ const Circle = styled.button`
       width: 13vw;
       height: 13vw;
       margin: 1vw 10vw;
+      
+      /* margin-bottom: 20vw; */
+
   }
 
   :hover{
-    margin-bottom: 50%;
-      /* transform: translatey(5vw); */
+    /* margin-bottom: 200px; */
 
-    & ~ ${H1Product} {
-      transform: scale(.1) translateX(20vw) rotateZ(-20deg);
-    }
-    
-  
     ${({theme})=>theme.media.tablet}{
-      margin-bottom: 6%;
-    }
-    /* & + h1 + div { */
-    & ~ ${ProductPrice}{
-      transform:  rotate(60deg) translateY(60%);
+      /* margin-bottom: 6%; */
     }
 
-    & ~ ${ProductSlide} {
+    /* & ~ ${ProductSlide} {
         width: 60vw;
         height: 80vw;
 
@@ -66,32 +59,24 @@ const Circle = styled.button`
         ${P}{
           transform: translateX(0);
         }
-    }
+    } */
 
   }
   
   :focus{
-    border: 1px inset orange;
-    margin-bottom: 50%;
+     border: 1px inset orange;
+     /* margin-bottom: 50%; 
 
-    & ~ ${H1Product} {
-      transform: scale(.001) translateX(20vw) rotateZ(-20deg);
-    }
+     ${({theme})=>theme.media.tablet}{ 
+       margin-bottom: 6%; 
+    } 
 
-    ${({theme})=>theme.media.tablet}{
-      margin-bottom: 6%;
-    }
-    
-    & ~ ${ProductPrice}{
-      transform:  rotate(60deg) translateY(60%);
-    }
-
-    & ~ ${ProductSlide} {
+     & ~ ${ProductSlide} {
           width: 60vw;
-          height: 80vw;
-          /* box-shadow: inset -100px -250px 50px -280px rgba(230,119,23,1); */
+          height: 80vw; 
+               box-shadow: inset -100px -250px 50px -280px rgba(230,119,23,1); 
 
-        ${({theme})=>theme.media.tablet}{
+         ${({theme})=>theme.media.tablet}{
           width: 40vw;
           height: 17vw;
         }
@@ -103,8 +88,8 @@ const Circle = styled.button`
         ${P}{
           transform: translateX(0);
         }
-    }
-  }
+    /* } */
+   }  
 
 `
 export default Circle;

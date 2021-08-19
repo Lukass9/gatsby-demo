@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, { useEffect, useState } from "react"
 import Layout from "../layout/Layout"
 import styled from "styled-components"
 
@@ -10,10 +10,12 @@ import H1 from "../Components/H1/H1"
 import FitnessSlider from "../Components/Slick-slider/FitnessSlider"
 import CosmSlider from "../Components/Slick-slider/CosmSlider"
 import PackageSlider from "../Components/Slick-slider/packageSlider"
+import ToogleCosmSup from "../Components/ProductCircle/ToogleCosmSup"
 
 import WrappCircle2 from "../Components/ProductCircle/WrappCircle"
 import {Suplements} from "../Components/ProductCircle/data"
-
+import {Cosmetics} from "../Components/ProductCircle/data"
+import CircleAnimation from "../Components/ProductCircle/ProductCircleAnimation"
 
 const WrappSlider = styled.div` 
   display: flex;
@@ -31,9 +33,11 @@ const Wrap = styled.div`
   }
 `
 
-
-
-
+// function SwitchContent(switchButton) {
+//     if (switchButton) {    
+//       return <H1> True </H1>  
+//     } else return <H1> False </H1>
+//   }
 
 const Cennik = ({ data }) => {
 const suplementsImage = [
@@ -45,8 +49,34 @@ const suplementsImage = [
   (data.setOdchudzajacy.childImageSharp.fluid),
   (data.kolagen.childImageSharp.fluid),
   (data.setKolagenowy.childImageSharp.fluid)
-
 ]
+
+const cosmeticsImage = [
+  (data.GoCellulitBuster.childImageSharp.fluid),
+  (data.GoNaturalCandleProLiczi.childImageSharp.fluid),
+  (data.GoNaturalCandleProWanilia.childImageSharp.fluid),
+  (data.GoScrubGingerbread.childImageSharp.fluid),
+  (data.GoScrubProTea.childImageSharp.fluid),
+  (data.GoShapePro.childImageSharp.fluid),
+  (data.GoUpBreastPro.childImageSharp.fluid),
+  (data.KremKolagenoweDayNight.childImageSharp.fluid),
+  (data.PomadkaPushUp.childImageSharp.fluid),
+  (data.PomadkaOchronna.childImageSharp.fluid),
+  (data.SetAntycellulitowy.childImageSharp.fluid),
+  (data.SetKolagenowyKremILiquid.childImageSharp.fluid),
+  (data.KremDoRak.childImageSharp.fluid)
+]
+
+const circle = document.querySelectorAll(".Circle");
+
+console.log(window);
+
+  const [switchButton, setSwitchButton] = useState(true);
+
+  useEffect(()=> {
+    CircleAnimation(); 
+  } )
+  
   return (
     <Layout>
       <CennikBg />
@@ -71,30 +101,31 @@ const suplementsImage = [
         </Wrap>
       </WrappSlider>
 
-      <H1 id="scroll_sup">Kosmetyki i suplementy</H1>
+      {/* <H1 id="scroll_sup">Kosmetyki i suplementy</H1> */}
+      <ToogleCosmSup id="scroll_sup" switchButton = {switchButton}/>
 
-      {/* <WrappCircle>
-      <Circle2>
-        <Img fluid={data.Jeczmien.childImageSharp.fluid} ale="Jeczmien" />
-      </Circle2>
-      <H1Product> Młody Jęczmień </H1Product>
+      <button onClick = { ()=> {
+        setSwitchButton(!switchButton)
+        // circle.forEach(el=>{
+        //   el.removeEventListener("mouseover", play)
+        //   el.removeEventListener("mouseleave", reverse)
+        //   el.removeEventListener("focus", playAndRemove);
+        //   el.removeEventListener("blur", reverseAndAdd);
+        // })
 
-      <ProductPrice>
-        <img src = {PriceTag}/>
-        <p> {cena} </p>
-      </ProductPrice>
+      }} > zmień </button>
 
-      <ProductSlide>
-        <CircleShape/>
-        <h1> Młody Jęczmień </h1>
-        <p> {opis} </p>
-      </ProductSlide>
-    </WrappCircle> */}
-      {Suplements.map((Suplement, i)=>(
+      {switchButton ? Suplements.map((Suplement, i)=>(
+          <WrappCircle2 Suplement={Suplement} img={<Img fluid={suplementsImage[i]} />} />)) 
+          : 
+          Cosmetics.map((Cosmetics, i)=>(
+            <WrappCircle2 Suplement={Cosmetics} img={<Img fluid={cosmeticsImage[i]} />} />))  }
+
+   
+      {/* {Suplements.map((Suplement, i)=>(
          <WrappCircle2 Suplement={Suplement} img={<Img fluid={suplementsImage[i]} />} />
-      ))}
-      {/* <WrappCircle2 YoungBarley={YoungBarley} img={<Img fluid={data.Jeczmien.childImageSharp.fluid} />} />
-      <WrappCircle2 YoungBarley={YoungBarley} img={<Img fluid={data.BioSlim.childImageSharp.fluid} />} /> */}
+      ))} */}
+ 
 
     </Layout>
   )
@@ -103,7 +134,7 @@ const suplementsImage = [
 export const query = graphql`
 query {
 
-  mlodyJeczmien: file(relativePath: { eq: "cosmetics/mlody-jeczmien-pro.png" }) {
+  mlodyJeczmien: file(relativePath: { eq: "suplements/mlody-jeczmien-pro.png" }) {
     childImageSharp {
       fixed(height:200, width:300, quality: 70) {
         ...GatsbyImageSharpFixed
@@ -114,7 +145,7 @@ query {
     }
   }
 
-  goClean: file(relativePath: { eq: "cosmetics/go-clean-pro.png" }) {
+  goClean: file(relativePath: { eq: "suplements/go-clean-pro.png" }) {
     childImageSharp {
       fixed(height:200, width:300, quality: 70) {
         ...GatsbyImageSharpFixed
@@ -125,7 +156,7 @@ query {
     }
   }
   
-  setOczyszczajacy: file(relativePath: { eq: "cosmetics/set-oczyszczajacy.png" }) {
+  setOczyszczajacy: file(relativePath: { eq: "suplements/set-oczyszczajacy.png" }) {
     childImageSharp {
       fixed(height:200, width:300, quality: 70) {
         ...GatsbyImageSharpFixed
@@ -136,7 +167,7 @@ query {
     }
   }
 
-  bioSlim: file(relativePath: { eq: "cosmetics/go-slim-liquid-pro.png" }) {
+  bioSlim: file(relativePath: { eq: "suplements/go-slim-liquid-pro.png" }) {
     childImageSharp {
       fixed(height:200, width:300, quality: 70) {
         ...GatsbyImageSharpFixed
@@ -147,7 +178,7 @@ query {
     }
   }
 
-  bioSlimTab: file(relativePath: { eq: "cosmetics/go-slim-pro.png" }) {
+  bioSlimTab: file(relativePath: { eq: "suplements/go-slim-pro.png" }) {
     childImageSharp {
       fixed(height:200, width:300, quality: 70) {
         ...GatsbyImageSharpFixed
@@ -158,7 +189,7 @@ query {
     }
   }
 
-  setOdchudzajacy: file(relativePath: { eq: "cosmetics/set-odchudzajacy.png" }) {
+  setOdchudzajacy: file(relativePath: { eq: "suplements/set-odchudzajacy.png" }) {
     childImageSharp {
       fixed(height:200, width:300, quality: 70) {
         ...GatsbyImageSharpFixed
@@ -169,7 +200,7 @@ query {
     }
   }
 
-  kolagen: file(relativePath: { eq: "cosmetics/go-collagen-liquid-pro.png" }) {
+  kolagen: file(relativePath: { eq: "suplements/go-collagen-liquid-pro.png" }) {
     childImageSharp {
       fixed(height:200, width:300, quality: 70) {
         ...GatsbyImageSharpFixed
@@ -180,7 +211,150 @@ query {
     }
   }
 
-  setKolagenowy: file(relativePath: { eq: "cosmetics/set-kolagenowy-kremy-i-liquid.png" }) {
+  setKolagenowy: file(relativePath: { eq: "suplements/set-kolagenowy-kremy-i-liquid.png" }) {
+    childImageSharp {
+      fixed(height:200, width:300, quality: 70) {
+        ...GatsbyImageSharpFixed
+      }
+      fluid(quality: 80, maxWidth: 850) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+
+  GoCellulitBuster: file(relativePath: { eq: "cosmetics/go-cellulite-buster-pro.png" }) {
+    childImageSharp {
+      fixed(height:200, width:300, quality: 70) {
+        ...GatsbyImageSharpFixed
+      }
+      fluid(quality: 80, maxWidth: 850) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+
+  GoNaturalCandleProLiczi: file(relativePath: { eq: "cosmetics/go-natural-candle-pro-liczi.png" }) {
+    childImageSharp {
+      fixed(height:200, width:300, quality: 70) {
+        ...GatsbyImageSharpFixed
+      }
+      fluid(quality: 80, maxWidth: 850) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+
+  GoNaturalCandleProWanilia: file(relativePath: { eq: "cosmetics/go-natural-candle-pro-wanilia.png" }) {
+    childImageSharp {
+      fixed(height:200, width:300, quality: 70) {
+        ...GatsbyImageSharpFixed
+      }
+      fluid(quality: 80, maxWidth: 850) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+
+  GoScrubGingerbread: file(relativePath: { eq: "cosmetics/go-scrub-pro-gingerbread.png" }) {
+    childImageSharp {
+      fixed(height:200, width:300, quality: 70) {
+        ...GatsbyImageSharpFixed
+      }
+      fluid(quality: 80, maxWidth: 850) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+
+  GoScrubProTea: file(relativePath: { eq: "cosmetics/go-scrub-pro-tea.png" }) {
+    childImageSharp {
+      fixed(height:200, width:300, quality: 70) {
+        ...GatsbyImageSharpFixed
+      }
+      fluid(quality: 80, maxWidth: 850) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+
+  GoShapePro: file(relativePath: { eq: "cosmetics/go-shape-pro.png" }) {
+    childImageSharp {
+      fixed(height:200, width:300, quality: 70) {
+        ...GatsbyImageSharpFixed
+      }
+      fluid(quality: 80, maxWidth: 850) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+
+  GoUpBreastPro: file(relativePath: { eq: "cosmetics/go-up-breast-pro-100-ml.png" }) {
+    childImageSharp {
+      fixed(height:200, width:300, quality: 70) {
+        ...GatsbyImageSharpFixed
+      }
+      fluid(quality: 80, maxWidth: 850) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+
+  KremKolagenoweDayNight: file(relativePath: { eq: "cosmetics/kremy-kolagenowe-go-collagen-natural-day-night-pro.png" }) {
+    childImageSharp {
+      fixed(height:200, width:300, quality: 70) {
+        ...GatsbyImageSharpFixed
+      }
+      fluid(quality: 80, maxWidth: 850) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+
+  PomadkaPushUp: file(relativePath: { eq: "cosmetics/pomadka-mentolove-z-efektem-push-up.png" }) {
+    childImageSharp {
+      fixed(height:200, width:300, quality: 70) {
+        ...GatsbyImageSharpFixed
+      }
+      fluid(quality: 80, maxWidth: 850) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+
+  PomadkaOchronna: file(relativePath: { eq: "cosmetics/pomadka-ochronna.png" }) {
+    childImageSharp {
+      fixed(height:200, width:300, quality: 70) {
+        ...GatsbyImageSharpFixed
+      }
+      fluid(quality: 80, maxWidth: 850) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+
+  SetAntycellulitowy: file(relativePath: { eq: "cosmetics/set-antycellulitowy-go-body-wrapping-pro-go-shape-pro-go-cellulite-buster-pro.png" }) {
+    childImageSharp {
+      fixed(height:200, width:300, quality: 70) {
+        ...GatsbyImageSharpFixed
+      }
+      fluid(quality: 80, maxWidth: 850) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+
+  SetKolagenowyKremILiquid: file(relativePath: { eq: "cosmetics/set-kolagenowy-kremy-i-liquid.png" }) {
+    childImageSharp {
+      fixed(height:200, width:300, quality: 70) {
+        ...GatsbyImageSharpFixed
+      }
+      fluid(quality: 80, maxWidth: 850) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+
+  KremDoRak: file(relativePath: { eq: "cosmetics/silky-hands-krem-do-rak.png" }) {
     childImageSharp {
       fixed(height:200, width:300, quality: 70) {
         ...GatsbyImageSharpFixed

@@ -3,26 +3,32 @@ import styled from "styled-components"
 
 const ProductSlid = styled.div`
     position: absolute;
-    overflow: auto;
-    top: 8vw;
-    left: 28vw;
+    top: -13vw;
+    left: 19vw;
 
     background-color: #eee;
     /* box-shadow: inset -100px -250px 50px -280px rgba(186,186,186,1); */
     box-shadow: -3px 3px 10px -5px rgba(0,0,0,0.75);
-    width: 5px;
-    height: 80px;
+    /* width: 5px;
+    height: 80px; */
     overflow:  hidden;
     padding: 10px;
     border-radius: 0% 25% 25% 5%;
     z-index: -1;
-    transition: height .4s, 
-                width .4s .4s;
+    /* transition: height .4s, 
+                width .4s .4s; */
+
+    /* transition: scaleX .8s; */
+    width: 60vw;
+    transform: scaleX(0.1) scaleY(0.1) translateX(-170vw) translateY(-60vw);
+
 
     ${({theme})=>theme.media.tablet}{
-        height: 120px;
+        /* height: 120px; */
         top: 3.2vw;
         left: 17vw;
+
+        width: 40vw;
     }
     
     /* & > h1 {

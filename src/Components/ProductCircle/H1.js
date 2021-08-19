@@ -3,12 +3,15 @@ import styled from "styled-components"
 const H1 = styled.h1 ` 
   color: #e67817;
   font-size: 5vw;
-  transform: translateX(-30vw);
-  transition: transform .6s .6s;
+  width: 95%;
+  transform: translateX(-40vw);
+  /* transition: transform .6s .6s; */
   z-index: -1;
 
   ${({theme})=>theme.media.tablet}{
-      font-size: 2vw;
+    transform: translateX(-30vw);
+    font-size: 2vw;
+    width: 100%
   }
 `
 

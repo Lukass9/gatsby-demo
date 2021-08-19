@@ -50,7 +50,7 @@ const Footer = () => (
             <Facebook> <FontAwesomeIcon icon={faFacebookF} /> </Facebook>
             <Instagram> <FontAwesomeIcon icon={faInstagram} /> </Instagram>
         </WrapperSocialMedia>
-        <p><span dangerouslySetInnerHTML={{ "__html": "&copy;" }} /> 2020 Projekt i realizacja Łukasz Pisarek</p>
+        <p><span dangerouslySetInnerHTML={{ "__html": "&copy;" }} /> 2021 Projekt i realizacja Łukasz Pisarek</p>
     </Wrapper>
 )
 
