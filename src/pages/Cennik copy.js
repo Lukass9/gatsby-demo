@@ -285,7 +285,7 @@ const Cennik = ({ data }) => (
 
 export const query = graphql`
 query {
-  Jeczmien: file(relativePath: { eq: "cosmetics/mlody-jeczmien-bez-tla.png" }) {
+  Jeczmien: file(relativePath: { eq: "suplements/mlody-jeczmien-bez-tla.png" }) {
     childImageSharp {
       fixed(height:200, width:300, quality: 70) {
         ...GatsbyImageSharpFixed
