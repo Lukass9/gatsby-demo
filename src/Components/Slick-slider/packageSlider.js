@@ -138,13 +138,13 @@ class PackageSlider extends Component{
            
           <thead>
             <tr>
-              <th colSpan="4"> <H1>{PackageData.packageName[this.state.activeSlide]} </H1> </th>
+              <th colSpan="4"><H1>{PackageData.packageName[this.state.activeSlide]} </H1></th>
             </tr>
             <tr>
-              <th colSpan="4"> <h3>{PackageData.packageComposiion[this.state.activeSlide]} </h3> </th>
+              <th colSpan="4"> <h3>{PackageData.packageComposiion[this.state.activeSlide]} </h3></th>
             </tr>
             <TrGray>
-              <Th>Wejścia</Th> <Th>Cena za zabieg</Th> <ThPrice>Cena</ThPrice> <Th>Cena pakietu </Th>
+              <Th>Wejścia</Th><Th>Cena za zabieg</Th><ThPrice>Cena</ThPrice><Th>Cena pakietu </Th>
             </TrGray>
           </thead>
    
@@ -156,14 +156,14 @@ class PackageSlider extends Component{
 
                 if ( i % 2 === 0 ) {
                   return (
-                    <tr>
-                      <Th> {el} </Th> <Td> {priceForSingleEntry} zł</Td> <TdPrice>{ } zł</TdPrice> <Td>{pricePackage} zł</Td>
+                    <tr key={i}>
+                      <Th> {el} </Th><Td> {priceForSingleEntry} zł</Td><TdPrice>{ } zł</TdPrice><Td>{pricePackage} zł</Td>
                     </tr>
                   )
                 }
                 else return(
-                  <TrGray>
-                    <Th> {el} </Th> <Td> {priceForSingleEntry} zł</Td> <TdPrice>{ } zł</TdPrice> <Td>{pricePackage} zł</Td>
+                  <TrGray key={i}>
+                    <Th> {el} </Th><Td> {priceForSingleEntry} zł</Td><TdPrice>{ } zł</TdPrice><Td>{pricePackage} zł</Td>
                   </TrGray>
                 )
                 

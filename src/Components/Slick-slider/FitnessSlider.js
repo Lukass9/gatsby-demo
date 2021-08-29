@@ -42,7 +42,7 @@ const SwanImg = styled.img`
   border-radius: 200px / 200px;
 `
 
-const Table = styled.table` 
+const Table = styled.table ` 
   margin-top: 20px;
   width: 100%;
   border-spacing: 0px;
@@ -141,21 +141,21 @@ class FitnessSlider extends Component{
         <Table>
           <thead>
             <tr>
-              <th colSpan = "4"> <H1>{Price[this.state.activeSlide][0]} </H1> </th>
+              <th colSpan = "4"> <H1> {Price[this.state.activeSlide][0]} </H1> </th>
             </tr>
             <TrGray>
-              <Th>Wejścia</Th> <Th>Cena za zabieg</Th> <ThPrice>Cena</ThPrice> <Th>Cena pakietu </Th>
+              <Th>"Wejścia"</Th><Th>"Cena za zabieg"</Th><ThPrice>"Cena"</ThPrice><Th>"Cena pakietu"</Th>
             </TrGray>
           </thead>
           <tbody>
             <tr>
-              <Th>1</Th> <Td> {Price[this.state.activeSlide][1]} zł</Td> <TdPrice>{Price[this.state.activeSlide][2]} zł</TdPrice> <Td>{Price[this.state.activeSlide][3]} zł</Td>
+              <Th>1</Th><Td>{Price[this.state.activeSlide][1]} zł</Td><TdPrice>{Price[this.state.activeSlide][2]} zł</TdPrice><Td>{Price[this.state.activeSlide][3]} zł</Td>
             </tr>
             <TrGray>
-              <Th>8</Th> <Td>{Price[this.state.activeSlide][4]} zł</Td> <TdPrice> <S>{Price[this.state.activeSlide][5]} zł</S></TdPrice><Td>{Price[this.state.activeSlide][6]} zł</Td>
+              <Th>8</Th><Td>{Price[this.state.activeSlide][4]} zł</Td><TdPrice><S>{Price[this.state.activeSlide][5]} zł</S></TdPrice><Td>{Price[this.state.activeSlide][6]} zł</Td>
             </TrGray>
             <tr>
-              <Th>12</Th> <Td>{Price[this.state.activeSlide][7]} zł</Td> <TdPrice> <S>{Price[this.state.activeSlide][8]} zł</S></TdPrice><Td>{Price[this.state.activeSlide][9]} zł</Td>
+              <Th>12</Th><Td>{Price[this.state.activeSlide][7]} zł</Td><TdPrice><S>{Price[this.state.activeSlide][8]} zł</S></TdPrice><Td>{Price[this.state.activeSlide][9]} zł</Td>
             </tr>
           </tbody>
         </Table>

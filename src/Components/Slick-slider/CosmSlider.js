@@ -101,10 +101,10 @@ function RenderTable( {activeSlide1 ,price ,HifuData, CaviShaperData, caviSahape
       <Table>
         <thead>
           <tr>
-            <th colSpan="4"> <H1>{Price[activeSlide1][0]} </H1> </th>
+            <th colSpan="4"><H1>{Price[activeSlide1][0]}</H1></th>
           </tr>
           <TrGray>
-            <Th>Miejsce zabiegowe</Th> <Th>Cena za zabieg</Th> 
+            <Th>Miejsce zabiegowe</Th><Th>Cena za zabieg</Th> 
           </TrGray>
         </thead>
         <tbody>
@@ -112,15 +112,15 @@ function RenderTable( {activeSlide1 ,price ,HifuData, CaviShaperData, caviSahape
           {HifuData.treatmentPlace.map((el,i)=>{ 
             if(i % 2 === 0){
               return(
-                  <tr>
-                    <Th> {el} </Th> <Td> {HifuData.price[i]} zł</Td> 
+                  <tr key={i}>
+                    <Th> {el} </Th><Td> {HifuData.price[i]} zł</Td> 
                   </tr>
               )
             }
             else{
               return(
-                <TrGray>
-                  <Th> {el} </Th> <Td> {HifuData.price[i]} zł</Td> 
+                <TrGray key={i}>
+                  <Th> {el} </Th><Td> {HifuData.price[i]} zł</Td> 
                 </TrGray>
               )
             }
@@ -135,19 +135,19 @@ function RenderTable( {activeSlide1 ,price ,HifuData, CaviShaperData, caviSahape
       <Table>
         <thead>
           <tr>
-            <th colSpan="4"> <H1>{Price[activeSlide1][0]} </H1> </th>
+            <th colSpan="4"><H1>{Price[activeSlide1][0]}</H1></th>
           </tr>
           <tr>
             <th colSpan="4">
               <Select className="deviceItem" onChange = {onChange}>
                 {CaviShaperData.deviceItem.map((device, i) => {
-                  return (<option value={i}> {device} </option>)
+                  return (<option key={i} value={i}> {device} </option>)
                 })}
               </Select>
             </th>
           </tr>
           <TrGray>
-            <Th>Wejścia</Th> <Th>Cena za zabieg</Th> <ThPrice>Cena</ThPrice> <Th>Cena pakietu </Th>
+            <Th>Wejścia</Th><Th>Cena za zabieg</Th><ThPrice>Cena</ThPrice><Th>Cena pakietu</Th>
           </TrGray>
         </thead>
         <tbody>
@@ -166,20 +166,20 @@ function RenderTable( {activeSlide1 ,price ,HifuData, CaviShaperData, caviSahape
               function crossedOutPrice() {
                 if (price === (priceForSingleEntry * entry)) {
                   return price;
-                } else return (<S> {price} </S>)
+                } else return (<S key={i}> {price} </S>)
               }
 
               if (i % 2 === 0) {
                 return (
-                  <tr>
-                    <Th> {entry} </Th> <Td> {priceForSingleEntry} zł</Td> <TdPrice>{crossedOutPrice()} zł</TdPrice> <Td>{priceForSingleEntry * entry} zł</Td>
+                  <tr key={i}>
+                    <Th> {entry} </Th><Td> {priceForSingleEntry} zł</Td><TdPrice>{crossedOutPrice()} zł</TdPrice><Td>{priceForSingleEntry * entry} zł</Td>
                   </tr>
                 )
               }
               else {
                 return (
-                  <TrGray>
-                    <Th> {entry} </Th> <Td> {priceForSingleEntry} zł</Td> <TdPrice>{crossedOutPrice()} zł</TdPrice> <Td>{priceForSingleEntry * entry} zł</Td>
+                  <TrGray key={i}>
+                    <Th> {entry} </Th><Td> {priceForSingleEntry} zł</Td><TdPrice>{crossedOutPrice()} zł</TdPrice><Td>{priceForSingleEntry * entry} zł</Td>
                   </TrGray>
                 )
               }
@@ -196,18 +196,18 @@ function RenderTable( {activeSlide1 ,price ,HifuData, CaviShaperData, caviSahape
           <th colSpan="4"> <H1>{Price[activeSlide1][0]} </H1> </th>
         </tr>
         <TrGray>
-          <Th>Wejścia</Th> <Th>Cena za zabieg</Th> <ThPrice>Cena</ThPrice> <Th>Cena pakietu </Th>
+          <Th>Wejścia</Th><Th>Cena za zabieg</Th><ThPrice>Cena</ThPrice><Th>Cena pakietu </Th>
         </TrGray>
       </thead>
       <tbody>
         <tr>
-          <Th>1</Th> <Td> {Price[activeSlide1][1]} zł</Td> <TdPrice>{Price[activeSlide1][2]} zł</TdPrice> <Td>{Price[activeSlide1][3]} zł</Td>
+          <Th>1</Th><Td> {Price[activeSlide1][1]} zł</Td><TdPrice>{Price[activeSlide1][2]} zł</TdPrice><Td>{Price[activeSlide1][3]} zł</Td>
         </tr>
         <TrGray>
-          <Th>8</Th> <Td>{Price[activeSlide1][4]} zł</Td> <TdPrice> <S>{Price[activeSlide1][5]} zł</S></TdPrice><Td>{Price[activeSlide1][6]} zł</Td>
+          <Th>8</Th><Td>{Price[activeSlide1][4]} zł</Td><TdPrice><S>{Price[activeSlide1][5]} zł</S></TdPrice><Td>{Price[activeSlide1][6]} zł</Td>
         </TrGray>
         <tr>
-          <Th>12</Th> <Td>{Price[activeSlide1][7]} zł</Td> <TdPrice> <S>{Price[activeSlide1][8]} zł</S></TdPrice><Td>{Price[activeSlide1][9]} zł</Td>
+          <Th>12</Th><Td>{Price[activeSlide1][7]} zł</Td><TdPrice><S>{Price[activeSlide1][8]} zł</S></TdPrice><Td>{Price[activeSlide1][9]} zł</Td>
         </tr>
       </tbody>
     </Table>

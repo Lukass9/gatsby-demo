@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useRef, useEffect, useState } from "react"
 import Layout from "../layout/Layout"
 import styled from "styled-components"
 
@@ -16,6 +16,8 @@ import WrappCircle2 from "../Components/ProductCircle/WrappCircle"
 import {Suplements} from "../Components/ProductCircle/data"
 import {Cosmetics} from "../Components/ProductCircle/data"
 import CircleAnimation from "../Components/ProductCircle/ProductCircleAnimation"
+import ToggleAnimation from "../Components/ProductCircle/ToggleAnimation"
+
 
 const WrappSlider = styled.div` 
   display: flex;
@@ -40,6 +42,8 @@ const Wrap = styled.div`
 //   }
 
 const Cennik = ({ data }) => {
+
+
 const suplementsImage = [
   (data.mlodyJeczmien.childImageSharp.fluid),
   (data.goClean.childImageSharp.fluid),
@@ -67,19 +71,24 @@ const cosmeticsImage = [
   (data.KremDoRak.childImageSharp.fluid)
 ]
 
-  const [switchButton, setSwitchButton] = useState(true);
+  const [switchButton, setSwitchButton] = useState(false);
+  const wrapper_toggle = useRef(null);
+  
 
   useEffect(()=> {
+    const [elements_toggle] = wrapper_toggle.current.children;
+    
     CircleAnimation(); 
+    ToggleAnimation(elements_toggle, switchButton);
   } )
   
   return (
-    <Layout>
+    <Layout >
       <CennikBg />
       <H1 id="scroll_fitwell">Stacje fitness & wellness</H1>
       <WrappSlider>
         <Wrap>
-          <FitnessSlider />
+          <FitnessSlider/>
         </Wrap>
       </WrappSlider>
 
@@ -98,18 +107,28 @@ const cosmeticsImage = [
       </WrappSlider>
 
       {/* <H1 id="scroll_sup">Kosmetyki i suplementy</H1> */}
-      <ToogleCosmSup id="scroll_sup" switchButton = {switchButton}/>
+      <ToogleCosmSup
+        wrapper={wrapper_toggle}
+        id="scroll_sup" 
+        switchButton = {switchButton} 
+        onClick = { ()=> {
+          // ToggleAnimation();
+          setSwitchButton(!switchButton);
+        }} 
+      />
 
-      <button onClick = { ()=> {
+      {/* <button onClick = { ()=> {
         setSwitchButton(!switchButton)
- 
-      }} > zmień </button>
+      }} > zmień </button> */}
 
-      {switchButton ? Suplements.map((Suplement, i)=>(
-          <WrappCircle2 Suplement={Suplement} img={<Img fluid={suplementsImage[i]} />} />)) 
-          : 
+      {switchButton ? 
           Cosmetics.map((Cosmetics, i)=>(
-            <WrappCircle2 Suplement={Cosmetics} img={<Img fluid={cosmeticsImage[i]} />} />))  }
+            <WrappCircle2 key={i} Suplement={Cosmetics} img={<Img fluid={cosmeticsImage[i]} />} />))  
+          :
+          Suplements.map((Suplement, i)=>(
+            <WrappCircle2 key={i} Suplement={Suplement} img={<Img fluid={suplementsImage[i]} />} />)) 
+          
+          }
 
    
       {/* {Suplements.map((Suplement, i)=>(

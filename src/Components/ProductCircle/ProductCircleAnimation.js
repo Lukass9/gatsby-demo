@@ -1,7 +1,6 @@
 import { gsap } from "gsap";
 
 function CircleAnimation() {
-
     const circle = document.querySelectorAll(".Circle");
     const ProductPrice = document.querySelectorAll(".ProductPrice");
     const ProductSlide = document.querySelectorAll(".ProductSlide");
@@ -34,7 +33,7 @@ function CircleAnimation() {
                 xPercent: -40,
             })
 
-        tl.to(ProductSlide[i],
+        .to(ProductSlide[i],
             {
                 duration: 0.3,
                 scaleX: 1,
@@ -43,43 +42,45 @@ function CircleAnimation() {
                 yPercent: 5,
             }, 0.2)
 
-        tl.to(ProductSlide[i],
+        .to(ProductSlide[i],
             {
                 duration: 0.3,
                 scaleY: 1,
                 yPercent: 40,
             }, 0.5)
 
-        tl.to(H1Product[i],
+        .to(H1Product[i],
             {
                 xPercent: -20,
                 opacity: 0,
             }, 0.4)
 
-        tl.to(ProductName[i],
+        .to(ProductName[i],
             {
                 duration: 0.5,
                 xPercent: 80,
             }, 0.6)
 
-        tl.to(ProductParagraph[i],
+        .to(ProductParagraph[i],
             {
                 duration: 0.5,
                 xPercent: 180,
-            }, 0.75)
+            }, 0.75, [] )
 
-        tl.to(ProductWrapp[i + 1],
-            {
-                duration: 1.1,
-                ease:"bounce.out",
-                y: distanceFromCircle,
-            }, 0.4)
-
-        if(i==ProductWrapp.length-1){
+        if(i < ProductWrapp.length - 1){
+            tl.to(ProductWrapp[i + 1],
+                {
+                    duration: 1.1,
+                    ease:"bounce.out",
+                    y: distanceFromCircle,
+                }, 0.4, [])        
+        }
+        
+        if(i == ProductWrapp.length-1){
             tl.to(ProductWrapp[i-1],
                 {
                     yPercent:-(distanceFromCircle/2),
-                }, 0.2)
+                }, 0.2, [])
 
             if(window.innerWidth < 1024){
                 const nextCircle = [ProductWrapp[i-1], ProductWrapp[i-2]];
@@ -93,33 +94,37 @@ function CircleAnimation() {
     
               
                     
-                tl.to(ProductWrapp[i],
+                .to(ProductWrapp[i],
                     {
                         yPercent:-(distanceFromCircle * 3.7),
-                    }, 0.5)
+                    }, 0.5  , [])
                 
             }else{
                 tl.to(ProductWrapp[i],
                     {
                         yPercent:-(distanceFromCircle/2),
-                    }, 0.5)
+                    }, 0.5, [])
             }
         }
         
         if(window.innerWidth < 1024){
             const nextCircle = [ProductWrapp[i+1], ProductWrapp[i+2]];
     
-            tl.to(nextCircle[0],
-                {
-                    duration: 0.3,
-                    xPercent: -25,
-                    scale: 0,
-                }, 0.4)
+            if(i < ProductWrapp.length - 1){
+                tl.to(nextCircle[0],
+                    {
+                        duration: 0.3,
+                        xPercent: -25,
+                        scale: 0,
+                    }, 0.4, [])
+                }
 
-            tl.to(nextCircle[1],
-                {
-                    yPercent: 25,
-                }, 0.6)
+            if(i < ProductWrapp.length - 2){
+                tl.to(nextCircle[1],
+                    {
+                        yPercent: 25,
+                    }, 0.6, [])
+                }
         }
 
 
@@ -142,7 +147,6 @@ function CircleAnimation() {
 
         if(window.innerWidth > 1024){
            
-
             el.onfocus = playAndRemove;
             el.onblur = reverseAndAdd;
             // el.addEventListener("focus", playAndRemove);
@@ -166,8 +170,7 @@ function CircleAnimation() {
         // el.addEventListener("mouseover", play );
         // el.addEventListener("mouseleave", reverse );
         
-        console.log("po");
-        console.log(el);
+
         // el.addEventListener("mouseover", () => openCircle2(ProductPrice, ProductSlide, i) );
         // el.addEventListener("mouseleave", () => clouseCircle2(ProductPrice, ProductSlide, i) );
     })
