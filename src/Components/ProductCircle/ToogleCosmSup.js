@@ -24,6 +24,7 @@ ${({ theme }) => theme.media.desktop}{
 `
 
 const H1Edit = styled(H1) `
+    user-select: none;
     width: auto;
     margin: 0px;
     padding: 0;
@@ -50,6 +51,7 @@ const Toggle = styled.div `
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    /* padding: 10px; */
 
 ${({ theme }) => theme.media.desktop}{
     width: 100%;
@@ -82,13 +84,14 @@ const Switch = styled.div `
     height: 35%;
     background-color: #F2F2F2;
     border-radius: 50px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    /* box-shadow: inset 3px 4px 4px rgba(250, 250, 250, 0.25); */
     transform: translateY(-100%);
 
 ${({ theme }) => theme.media.desktop}{
     height: 85%;
     width: 20%;
     left: 0;
+    box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.25);
     transform: translateY(0);
 }
 `
