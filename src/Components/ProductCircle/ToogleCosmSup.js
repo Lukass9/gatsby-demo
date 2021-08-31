@@ -80,19 +80,39 @@ ${({ theme }) => theme.media.desktop}{
 const Switch = styled.div ` 
     display: block;
     position: absolute;
-    width: 80%;
-    height: 35%;
-    background-color: #F2F2F2;
+    width: 85%;
+    height: 50%; //35
+    background: linear-gradient(180deg, #F3F3F3 28.65%, rgba(243, 243, 243, 0) 100%);
+    /* background-color: #F2F2F2; */
     border-radius: 50px;
+    filter: blur(4px);
     /* box-shadow: inset 3px 4px 4px rgba(250, 250, 250, 0.25); */
-    transform: translateY(-100%);
+    transform: translateY(-40%);
 
 ${({ theme }) => theme.media.desktop}{
+    background-color: #F2F2F2;
     height: 85%;
     width: 20%;
     left: 0;
+    filter: blur(0px);
     box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.25);
     transform: translateY(0);
+}
+`
+const Switch2 = styled.div ` 
+    display: block;
+    position: absolute;
+    width: 85%;
+    height: 50%; //35
+    background: linear-gradient(180deg, rgba(243, 243, 243, 0) 37.5%, #F2F2F2 100%);
+    /* background-color: #F2F2F2; */
+    border-radius: 50px;
+    filter: blur(4px);
+    /* box-shadow: inset 3px 4px 4px rgba(250, 250, 250, 0.25); */
+    transform: translateY(40%);
+
+${({ theme }) => theme.media.desktop}{
+    visibility: hidden;
 }
 `
 
@@ -109,6 +129,8 @@ const ToogleCosmSup = ({switchButton, onClick, wrapper }) => {
                 <H1Edit isActive = {true}> i </H1Edit> 
                 <H1Edit isActive = {!switchButton}> Kosmetyki </H1Edit>
                 <Switch className ="switch"/>
+                <Switch2 className ="switch2"/>
+                
             </Toggle>
         </Wrapp>
     )
