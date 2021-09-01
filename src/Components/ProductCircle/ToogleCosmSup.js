@@ -26,8 +26,8 @@ ${({ theme }) => theme.media.desktop}{
 const H1Edit = styled(H1) `
     user-select: none;
     width: auto;
-    margin: 0px;
-    padding: 0;
+    margin: 4vw;
+    padding: 0vw;
     font-weight: ${({isActive}) => isActive? "normal" : "800" };
 
     z-index: 2;
@@ -80,14 +80,14 @@ ${({ theme }) => theme.media.desktop}{
 const Switch = styled.div ` 
     display: block;
     position: absolute;
-    width: 85%;
+    width: 95%;
     height: 50%; //35
     background: linear-gradient(180deg, #F3F3F3 28.65%, rgba(243, 243, 243, 0) 100%);
     /* background-color: #F2F2F2; */
     border-radius: 50px;
     filter: blur(4px);
     /* box-shadow: inset 3px 4px 4px rgba(250, 250, 250, 0.25); */
-    transform: translateY(-40%);
+    transform: translateY(-45%);
 
 ${({ theme }) => theme.media.desktop}{
     background-color: #F2F2F2;
@@ -102,14 +102,27 @@ ${({ theme }) => theme.media.desktop}{
 const Switch2 = styled.div ` 
     display: block;
     position: absolute;
-    width: 85%;
+    width: 95%;
     height: 50%; //35
-    background: linear-gradient(180deg, rgba(243, 243, 243, 0) 37.5%, #F2F2F2 100%);
+    background: linear-gradient(180deg, rgba(243, 243, 243, 0) 28.65%, #F3F3F3 100%);
     /* background-color: #F2F2F2; */
     border-radius: 50px;
     filter: blur(4px);
     /* box-shadow: inset 3px 4px 4px rgba(250, 250, 250, 0.25); */
-    transform: translateY(40%);
+    transform: translateY(45%);
+
+${({ theme }) => theme.media.desktop}{
+    visibility: hidden;
+}
+`
+const ShadowCenterButton = styled.div ` 
+display: block;
+    position: absolute;
+    width: 100%;
+    height: 30%; //35
+    background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, rgba(196, 196, 196, .2) 50%, rgba(196, 196, 196, 0) 100%);
+    filter: blur(10px);
+    transform: translateY(0%);
 
 ${({ theme }) => theme.media.desktop}{
     visibility: hidden;
@@ -126,9 +139,10 @@ const ToogleCosmSup = ({switchButton, onClick, wrapper }) => {
         >
             <Toggle className ="toggle"> 
                 <H1Edit isActive = {switchButton}> Suplementy </H1Edit> 
-                <H1Edit isActive = {true}> i </H1Edit> 
+                {/* <H1Edit isActive = {true}> i </H1Edit>  */}
                 <H1Edit isActive = {!switchButton}> Kosmetyki </H1Edit>
                 <Switch className ="switch"/>
+                <ShadowCenterButton />
                 <Switch2 className ="switch2"/>
                 
             </Toggle>
