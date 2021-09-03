@@ -14,6 +14,7 @@ function ToggleAnimation (elements, switchButton){
     const tl3 = gsap.timeline({
         paused: true, 
     });
+    // gsap.set(Toggle, {xPercent: 145, })
 
     // if(window.innerWidth < 1024){
     //     tl2.to(Toggle, { duration: .5, yPercent: 100, scaleX: 0.8, opacity: .25, })
@@ -32,12 +33,12 @@ function ToggleAnimation (elements, switchButton){
 
         tl2.to(shadowButtonUp, { duration: 1.1, opacity: 0,})
             .to(shadowButtonDown, {duration: 1.1, opacity: 1 }, .1)
-            .to(ToggleWrapp, {duration: 1,  rotationX: 15, boxShadow: '0px -7px 4px rgba(0, 0, 0, 0.25)'}, .1 )
+            .to(ToggleWrapp, {duration: 1,  rotationX: 20, boxShadow: '0px -7px 4px rgba(0, 0, 0, 0.25)'}, .1 )
                 // .to(Toggle, {duration: .4, boxShadow: 'inset 0px 4px 2px rgba(0, 0, 0, 0.05)'}, .5)
     
         tl3.to(shadowButtonDown, { duration: 1.1,  opacity: 0 })
             .to(shadowButtonUp, {duration: 1.1, opacity: 1 }, .1)
-            .to(ToggleWrapp, {duration: 1, rotationX: -15, boxShadow: '0px 7px 4px rgba(0, 0, 0, 0.25)'}, .1)
+            .to(ToggleWrapp, {duration: 1, rotationX: -20, boxShadow: '0px 7px 4px rgba(0, 0, 0, 0.25)'}, .1)
                 // .to(Toggle, {duration: .4, boxShadow: 'inset 0px 4px 2px rgba(0, 0, 0, 0.25)'}, .5)
     }
 
@@ -45,12 +46,17 @@ function ToggleAnimation (elements, switchButton){
 
 
     else {
-        gsap.set(Toggle, {xPercent: 145})
-        tl2.to(Toggle, {duration: .3, xPercent: 195, scaleX: 1.9, ease:'none'})
-            .to(Toggle, {duration: .4, xPercent:  257, scaleX: 1, ease:'power1.out'}, .3)
+        tl2.to(Toggle, {duration: .3, xPercent: 45, scaleX: 1.9, ease:'none'})
+            .to(Toggle, {duration: .4, xPercent:  110, scaleX: 1, ease:'power1.out'}, .3)
 
-        tl3.to(Toggle, {duration: .3, xPercent: 207, scaleX: 1.9, ease:'none'}) 
-            .to(Toggle, {duration: .4, xPercent:  145, scaleX: 1, ease:'power1.out'}, .3)
+        tl3.to(Toggle, {duration: .3, xPercent: 65, scaleX: 1.9, ease:'none'}) 
+            .to(Toggle, {duration: .4, xPercent:  0, scaleX: 1, ease:'power1.out'}, .3)
+
+        // tl2.to(Toggle, {duration: .3, xPercent: 195, scaleX: 1.9, ease:'none'})
+        //     .to(Toggle, {duration: .4, xPercent:  257, scaleX: 1, ease:'power1.out'}, .3)
+
+        // tl3.to(Toggle, {duration: .3, xPercent: 207, scaleX: 1.9, ease:'none'}) 
+        //     .to(Toggle, {duration: .4, xPercent:  145, scaleX: 1, ease:'power1.out'}, .3)
     }
 
 

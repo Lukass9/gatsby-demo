@@ -299,7 +299,7 @@ function Menu () {
                             <AnchorLinkWithoutDecoration to="/Cennik#scroll_sup" stripHash><SubLi>Kosmetyki i suplementy</SubLi></AnchorLinkWithoutDecoration>
                         </SubMenu>
                     <Li as={Link} to="/Promocje">Promocje</Li>
-                    <Li>Wspomnienia ;)</Li>
+                    <Li as={Link} to="/Wspomnienia">Wspomnienia ;)</Li>
                     <Li as={Link} to="/Wskazowki">Wskazówki</Li>
                     <Li>Kadra</Li>
                     <Li as={Link} to="/Kontakt">Kontakt</Li>

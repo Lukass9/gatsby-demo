@@ -96,7 +96,7 @@ ${({ theme }) => theme.media.desktop}{
     left: 0;
     filter: blur(0px);
     box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.25);
-    transform: translateY(0);
+    transform: translateY(0) translateX(145%);
 }
 `
 const Switch2 = styled.div ` 
@@ -120,7 +120,7 @@ display: block;
     position: absolute;
     width: 100%;
     height: 30%; //35
-    background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, rgba(196, 196, 196, .2) 50%, rgba(196, 196, 196, 0) 100%);
+    background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, rgba(196, 196, 196, .3) 50%, rgba(196, 196, 196, 0) 100%);
     filter: blur(10px);
     transform: translateY(0%);
 
