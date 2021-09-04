@@ -9,6 +9,7 @@ const Wspomnienia = () => {
   return (
     <Layout >
         <WspomnieniaBg/>
+        
     </Layout>
   )
 }
