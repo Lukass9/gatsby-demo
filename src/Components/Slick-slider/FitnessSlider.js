@@ -144,7 +144,7 @@ class FitnessSlider extends Component{
               <th colSpan = "4"> <H1> {Price[this.state.activeSlide][0]} </H1> </th>
             </tr>
             <TrGray>
-              <Th>"Wejścia"</Th><Th>"Cena za zabieg"</Th><ThPrice>"Cena"</ThPrice><Th>"Cena pakietu"</Th>
+              <Th>Wejścia</Th><Th>Cena za zabieg</Th><ThPrice>Cena</ThPrice><Th>Cena pakietu</Th>
             </TrGray>
           </thead>
           <tbody>

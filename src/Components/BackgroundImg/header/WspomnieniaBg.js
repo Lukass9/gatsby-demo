@@ -35,16 +35,16 @@ const BackgroundSection = ({ className }) => {
 }
 
 const H2 = styled.h2 ` 
-    font-size: 11vw;
+    font-size: 7vw;
     /* font-size: 7vw; */
     /* font-size: 50px; */
     letter-spacing: 0.6em;
 	  color: #E67817;
     text-shadow: -2px 5px 5px rgba(0, 0, 0, 0.25);
 
-    ${({theme}) => theme.media.desktop} {
+    /* ${({theme}) => theme.media.desktop} {
       font-size: 7vw;
-    }
+    } */
 `
 
 const WspomnieniaBg = styled(BackgroundSection)`
