@@ -18,6 +18,7 @@ const Card = styled.div`
     top: 0px;
     left: ${props => props.left};
     z-index: ${props => props.zIndex};
+    cursor: pointer;
 
 ${({theme})=>theme.media.desktop}{
     width: 21vw;
@@ -43,9 +44,10 @@ const Title = styled.p `
     font-weight: bold;
 `
 
-const PolaroidCard = ({img, rotate, title, position, zIndex, left})=> {
+const PolaroidCard = ({img, rotate, title, position, zIndex, left, onClick})=> {
     return(
-        <Card left = {left} zIndex= {zIndex} rotate = {rotate} position = {position}>
+        // <Card left = {left} zIndex= {zIndex} rotate = {  "rotate(" + setRandomRotateCard() +"deg)" } position = {position}>
+        <Card onClick= {onClick} left = {left} zIndex= {zIndex} rotate = { rotate } position = {position}>
             <WrappImage>
                 { img }
             </WrappImage>

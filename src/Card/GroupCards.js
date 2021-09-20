@@ -12,15 +12,16 @@ function showCards(imgs){
     let left = 0;
     const cards = imgs.slice(0, 3);
 
-    return cards.map(card=>(
+    return cards.map((card, i)=>(
         <Card 
+            key= {i}
             left= { (left-=16) + "px" }  // 
             rotate= { "rotate("+ (rotate-=2) +"deg)"} // efekt rozłożonych kart 
             zIndex= {zIndex-=1} // karta jedna pod drugą 
             position= {"absolute"}
             img ={ <img style = {{height: "100%", width: "100%", objectFit: "cover"}}
                 alt= {card.alt}
-                src= {card.url}/> } 
+                src= {card.fluid.src}/> } 
         />
     ))    
 }
@@ -31,7 +32,7 @@ const GroupCards = ({imgs, mainImg, rotate, title, onClick})=> {
             <Card
                 zIndex = {4}
                 position = {"relative"}  
-                rotate = {rotate} 
+                rotate = {"rotate(0deg)"} 
                 img ={<img  style = {{height: "100%", width: "100%", objectFit: "cover"}} 
                             src= {mainImg} />}
                 title={title}

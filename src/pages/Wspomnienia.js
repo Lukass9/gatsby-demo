@@ -7,6 +7,7 @@ import H1 from "../Components/H1/H1"
 import Card from "../Card/Card"
 import GroupCards from "../Card/GroupCards"
 import Button from "../Components/Button/Button1"
+import Modal from "../Components/Modal/Gallery"
 
 import { graphql } from "gatsby"
 import Img from "gatsby-image/withIEPolyfill"
@@ -29,61 +30,95 @@ const WrappButton = styled.div `
   justify-content: flex-end;
   margin-bottom: 5vh;
 `
+
+const FilterWrapp = styled.div ` 
+    filter: ${({modal}) => modal? "brightness(45%) blur(3px)" : "blur(0px)" };
+`
+
+const MdaolImg = styled.img ` 
+  height: 80vh;
+`
+
+function setRandomRotateCard() {
+  const max = 10;
+  const min = 2;
+  let randomNumber = Math.round(Math.random() * (max-min+1) + min)
+  if(Math.round( Math.random() ) > 0 ){
+    randomNumber = randomNumber * (-1); 
+  }
+  // return randomNumber
+  return "rotate(" + randomNumber +"deg)"
+}
+
 const Wspomnienia = ({data}) => {
 
-  const [photos, setPhotos] = useState(-1);
+  const [gallery, setGallery] = useState(-1);
+  const [photo, setPhoto] = useState(0);
   const [title, setTitle] = useState('Galeria zdjęć')
+  const [modal, isOpenModal] = useState(false);
   // const kontakt = {...data.contact.childImageSharp.fluid, aspectRatio: 0.98};
   // const wspomnienia =  {...data.wspomnienia.childImageSharp.fluid, aspectRatio: 0.98}
   // const kontakt = {...data.contact.childImageSharp.fluid};
   // const wspomnienia =  {...data.wspomnienia.childImageSharp.fluid};
 
   return (
-    <Layout >
-        <WspomnieniaBg/>
-        <H1> {title} </H1>
-        <Wrapper>
+    <>
+      {modal && <Modal img= {<MdaolImg src = {data.allDatoCmsGalery.edges[gallery].node.galery[photo].fluid.src} /> }
+      onClick = { ()=> isOpenModal(!isOpenModal) }/>}
+      {/* {modal && <Modal />} */}
+      <FilterWrapp modal ={modal} >
+        <Layout >
+          <WspomnieniaBg/>
+          <H1> {title} </H1>
+          <Wrapper>
+            
+            {gallery == -1 ? data.allDatoCmsGalery.edges.map((gallery, i) => (
+              <GroupCards onClick ={()=> {
+                setGallery(i);
+                setTitle(gallery.node.title);
+              }}
+                          key ={gallery.node.title} 
+                          mainImg ={gallery.node.presentPicture.url}
+                          imgs ={data.allDatoCmsGalery.edges[i].node.galery}
+                          title = {gallery.node.title} />
+              )) :
+                data.allDatoCmsGalery.edges[gallery].node.galery.map((picture, i) => (
+                  <Card onClick = { ()=>{ 
+                    isOpenModal(true);
+                    setPhoto(i);
+                  }}
+                  rotate = { setRandomRotateCard() } 
+                  key={picture.alt} 
+                  img ={ <img style = {{height: "100%", width: "100%", objectFit: "cover"}} src = {picture.fluid.src} /> } />
+                ))  
+            }
+
           
-          {photos == -1 ? data.allDatoCmsGalery.edges.map((gallery, i) => (
-            <GroupCards onClick ={()=> {
-              setPhotos(i);
-              setTitle(gallery.node.title);
-            }}
-                        key ={gallery.node.title} 
-                        mainImg ={gallery.node.presentPicture.url}
-                        imgs ={data.allDatoCmsGalery.edges[i].node.galery}
-                        title = {gallery.node.title} />
-            )) :
-              data.allDatoCmsGalery.edges[photos].node.galery.map(picture => (
-                <Card key={picture.alt} img ={ <img style = {{height: "100%", width: "100%", objectFit: "cover"}} src = {picture.url} /> } />
-                
-              ))  
-          }
 
-        
+            {/* {data.allDatoCmsGalery.edges.map(gallery => (
+              <Card key ={gallery.node.title} 
+                    img ={<img style = {{height: "100%", width: "100%", objectFit: "cover"}} 
+                    src ={gallery.node.presentPicture.url}/>} 
+                    title = {gallery.node.title} />
+            ))} */}
 
-          {/* {data.allDatoCmsGalery.edges.map(gallery => (
-            <Card key ={gallery.node.title} 
-                  img ={<img style = {{height: "100%", width: "100%", objectFit: "cover"}} 
-                  src ={gallery.node.presentPicture.url}/>} 
-                  title = {gallery.node.title} />
-          ))} */}
+          {/* {data.allDatoCmsGalery.edges[0].node.galery.map(picture => (
+              <Card key={picture.alt} img ={ <img style = {{height: "100%", width: "100%", objectFit: "cover"}} src = {picture.url} /> } />
+            ))} */}
 
-        {/* {data.allDatoCmsGalery.edges[0].node.galery.map(picture => (
-            <Card key={picture.alt} img ={ <img style = {{height: "100%", width: "100%", objectFit: "cover"}} src = {picture.url} /> } />
-          ))} */}
+            {/* <Card img = {<Img style = {{height: "100%" }} fluid={kontakt} />} rotate= {"rotate(0deg)"}/>
+            <Card img = {<Img style = {{height: "100%" }} fluid={wspomnienia}/>} rotate= {"rotate(0deg)"}/> */}
+          </Wrapper>
 
-          {/* <Card img = {<Img style = {{height: "100%" }} fluid={kontakt} />} rotate= {"rotate(0deg)"}/>
-          <Card img = {<Img style = {{height: "100%" }} fluid={wspomnienia}/>} rotate= {"rotate(0deg)"}/> */}
-        </Wrapper>
-
-        <WrappButton>
-          {photos != -1 &&
-          <Button onClick={()=>{setPhotos(-1); 
-                                setTitle('Galeria zdjęć');}  
-              } >Powrót</Button>}
-        </WrappButton>
-    </Layout>
+          <WrappButton>
+            {gallery != -1 &&
+            <Button onClick={()=>{setGallery(-1); 
+                                  setTitle('Galeria zdjęć');}  
+                } >Powrót</Button>}
+          </WrappButton>
+      </Layout>
+    </FilterWrapp>
+  </>
   )
 }
 
@@ -96,10 +131,16 @@ export const query = graphql `
           presentPicture {
             alt
             url
+            fluid{
+              src
+            }
           }
           galery {
             alt
             url
+            fluid{
+              src
+            }
           }
         }
       }
