@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components";
 
-const P = styled.p `
+const P = styled.p`
     margin: 1.4vw;
     font-size: 7vw;
     font-family: 'Aharoni', sans-serif ;
@@ -56,6 +56,11 @@ const P = styled.p `
 	  opacity: 1;
 	}
     }
+
+
+@media screen and (min-width: 600px){
+  font-size: 4.8vw;
+}
 `
 
 const Trzeb = () => (

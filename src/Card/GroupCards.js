@@ -5,6 +5,14 @@ import Card from "./Card"
 const Wrapp = styled.div ` 
     position: relative;
     transform: translateX(8%);
+
+@media only screen and (orientation: landscape) {
+    margin: 2vh 10vh;
+}
+
+${({theme})=>theme.media.desktop}{
+    margin: 2vh 5vh;
+}
 `
 function showCards(imgs){
     let rotate = 0;

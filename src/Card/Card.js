@@ -19,11 +19,17 @@ const Card = styled.div`
     left: ${props => props.left};
     z-index: ${props => props.zIndex};
     cursor: pointer;
+    
+@media only screen and (orientation: landscape) {
+    width: 28vw;
+    height: 70vh;
+}
 
 ${({theme})=>theme.media.desktop}{
     width: 21vw;
-    margin: 2vh 5vh;
+    height: 50vh;
 }
+
 `
 
 const WrappImage = styled.div ` 

@@ -10,11 +10,16 @@ import Wroclaw from "../../Components/P/wroclaw"
 
 const Img = styled.img `
   height: 100vw;
+
+@media screen and (min-width: 600px){
+  height: 70vw;
+}
 `
 
 const WrapperRow = styled.div ` 
     display: flex;
     flex-direction: row;
+    /* height: 50vh; */
 `
 const WrapperCol = styled.div ` 
     display: flex;
@@ -36,8 +41,7 @@ const LogoLink = styled.a `
 `
 const Phone = styled(LogoLink) ` 
       font-size: 2.3em;
-      width: 60vw;
-
+      margin: 0 1vw;
 `
 const Wrapp = styled.div ` 
   display: flex;
@@ -50,14 +54,19 @@ const Wrapp = styled.div `
   ${({theme}) => theme.media.desktop} {
         display: none;
     }
+
+@media screen and (orientation: landscape){
+  transform: scale(0.5)
+}
 `
 
 const WrappFlex = styled.div ` 
   display: flex;
   flex-flow: row;
+@media screen and (min-width: 600px){
+  transform: scale(0.8);
+}
 `
-
-
 const PhoneHeader = () => (
       <Wrapp>
         <WrappFlex>

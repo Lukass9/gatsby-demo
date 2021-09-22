@@ -14,7 +14,7 @@ const FlexWrappLeft = styled.section`
   align-items: center;
   align-items: flex-start;
 
-  ${({ theme }) => theme.media.tablet}{
+@media screen and (min-width: 650px) {
     display: grid;
     grid-template-columns: .25fr repeat(2, 1fr) .25fr;
     grid-template-rows: repeat(3, 1fr);
@@ -36,7 +36,7 @@ const H1Header = styled.h1`
   /* top: -2.2%; */
   z-index: 5;
 
-  ${({ theme }) => theme.media.tablet}{
+  @media screen and (min-width: 650px) {
     font-size: 5vw;
     grid-area: 1 / 2 / 2 / 4; 
   }
@@ -46,7 +46,7 @@ const RowWrappContact = styled.div`
   flex-flow: row;
   margin: 2vw 5vw;
 
-  ${({ theme }) => theme.media.tablet}{
+  @media screen and (min-width: 650px) {
     margin: 0px;
     padding-left: 5vw;
     grid-area: 2 / 2 / 3 / 3;
@@ -62,7 +62,7 @@ const ICons = styled(Icon)`
   width: 50px;
   height: 50px;
 
-  ${({ theme }) => theme.media.tablet}{
+  @media screen and (min-width: 650px) {
     width: 3.5vw;
     height: 3.5vw;
   }
@@ -74,7 +74,7 @@ const Pcontact = styled.p`
   margin: 5vw;
   font-size: 5vw;
 
-  ${({ theme }) => theme.media.tablet}{
+  @media screen and (min-width: 650px) {
       margin: 0 2vw;
       font-size: 2vw;
     }
@@ -84,7 +84,7 @@ const PcontactPhone = styled(Pcontact)`
     font-size: 7vw;
     letter-spacing: .5vw;
 
-    ${({ theme }) => theme.media.tablet}{
+    @media screen and (min-width: 650px) {
       font-size: 2.5vw;
     }
 `

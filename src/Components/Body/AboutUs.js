@@ -14,7 +14,7 @@ const FlexWrapp = styled.section`
   justify-content: center;
   align-items: center;
 
-  ${({theme})=>theme.media.tablet}{
+  @media screen and (min-width: 650px) {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(3, .5fr);
@@ -41,7 +41,7 @@ const H1Header = styled.h1`
   /* top: -2.2%; */
   z-index: 5;
 
-  ${({theme})=>theme.media.tablet}{
+@media screen and (min-width: 650px) {
     grid-area: 1 / 3 / 2 / 6;
     font-size: 5vw;
 

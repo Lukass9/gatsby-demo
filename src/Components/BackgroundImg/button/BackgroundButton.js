@@ -108,7 +108,7 @@ const H1 = styled.h1 `
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.8);
   text-align: center;
 
-  ${({theme})=>theme.media.tablet}{
+  @media screen and (min-width: 650px) {
         font-size: 3vw;
     }
 `
@@ -137,7 +137,7 @@ const CennikButtonBG = styled(BackgroundSection)`
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   background-repeat: no-repeat;
 
-  ${({theme})=>theme.media.tablet}{
+  @media screen and (min-width: 650px) {
       width: 30vw;
       height: 25vh;
       border-radius: 4vw;

@@ -22,13 +22,19 @@ const Wrapper = styled.div `
     justify-content: center;
     flex-wrap: wrap;
 }
+
+@media only screen and (orientation: landscape) {
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap
+}
 `
 
 const WrappButton = styled.div `
   display: flex;
   width:90%;
   justify-content: flex-end;
-  margin-bottom: 5vh;
+  margin: 5vh 0;
 `
 
 const FilterWrapp = styled.div ` 
@@ -37,13 +43,19 @@ const FilterWrapp = styled.div `
 
 const MdaolImg = styled.img ` 
   height: 80vh;
+
+@media only screen and (orientation: portrait) {
+  height: auto;
+  width: 80vw;
+}
 `
 
-function setRandomRotateCard() {
+function setRandomRotateCard(i) {
   const max = 10;
   const min = 2;
   let randomNumber = Math.round(Math.random() * (max-min+1) + min)
-  if(Math.round( Math.random() ) > 0 ){
+  // if(Math.round( Math.random() ) > 0 ){
+    if( i%2 ){
     randomNumber = randomNumber * (-1); 
   }
   // return randomNumber
@@ -87,7 +99,7 @@ const Wspomnienia = ({data}) => {
                     isOpenModal(true);
                     setPhoto(i);
                   }}
-                  rotate = { setRandomRotateCard() } 
+                  rotate = { setRandomRotateCard(i) } 
                   key={picture.alt} 
                   img ={ <img style = {{height: "100%", width: "100%", objectFit: "cover"}} src = {picture.fluid.src} /> } />
                 ))  
