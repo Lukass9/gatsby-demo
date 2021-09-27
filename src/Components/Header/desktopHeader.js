@@ -1,7 +1,7 @@
 import React from "react"
 import styled, { keyframes } from "styled-components"
 
-import LogoSF from "../../images/log_bez_tla.svg"
+import LogoSF  from "../../images/log_bez_tla.svg"
 import PhonePhoto from "../../images/phone.svg"
 import MailPhoto from "../../images/mail.svg"
 
@@ -213,7 +213,6 @@ const DesktopHeader = ( ) => {
         <Ellipse9/>
         <WrapperLogo>
             <ImgWithoutGatsby src={LogoSF} alt="logo" /> 
-            {/* <Img fixed ={data.twojaStara.childImageSharp.fixed} alt="losgo"/> */}
             <WrapperText>
                 <WrapperLogo>
                   <Wroclaw 

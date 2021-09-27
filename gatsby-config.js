@@ -25,7 +25,7 @@ module.exports = {
       resolve: "gatsby-plugin-anchor-links",
       options: {
         offset: -50,
-        display: 1000
+        duration: 1000
       }
     },
     `gatsby-plugin-smoothscroll`,

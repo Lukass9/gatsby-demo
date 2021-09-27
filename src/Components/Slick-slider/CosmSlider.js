@@ -20,7 +20,11 @@ import Slider from "react-slick";
 
 const Slider2 = styled(Slider)`
   width: 100%;
-
+  height: 38vh;
+${({theme})=>theme.media.tablet}{
+  height: 18vw;
+}
+  
   .slick-prev:before,
   .slick-next:before
   {

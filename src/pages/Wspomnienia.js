@@ -100,7 +100,8 @@ const Wspomnienia = ({data}) => {
                     setPhoto(i);
                   }}
                   rotate = { setRandomRotateCard(i) } 
-                  key={picture.alt} 
+                  key={picture.basename}
+                  // key={i} 
                   img ={ <img style = {{height: "100%", width: "100%", objectFit: "cover"}} src = {picture.fluid.src} /> } />
                 ))  
             }
@@ -148,6 +149,7 @@ export const query = graphql `
             }
           }
           galery {
+            basename
             alt
             url
             fluid{

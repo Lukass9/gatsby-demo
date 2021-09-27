@@ -105,7 +105,7 @@ function setModal(device) {
             
           </PhotoWrapp>
 
-          <H1>STREFA WELLNES</H1>
+          <H1 id="scroll_wellnes">STREFA WELLNES</H1>
           <PhotoWrapp>
 
             {WelnessDataDevice.map( (el,i) => 

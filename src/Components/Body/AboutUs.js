@@ -1,6 +1,9 @@
 import React, { useEffect } from "react"
 import styled from "styled-components"
 
+import { Link } from "gatsby"
+import { AnchorLink } from "gatsby-plugin-anchor-links";
+
 import BackgroundButton from "../BackgroundImg/button/BackgroundButton"
 
 import { gsap } from "gsap";
@@ -53,14 +56,25 @@ const H1Header = styled.h1`
      &:nth-child(4){ grid-area: 3 / 4 / 4 / 5; } 
      &:nth-child(5){ grid-area: 3 / 5 / 4 / 6; }  */
 
-    &+section{ grid-area: 2 / 3 / 3 / 4; } 
+    &+a{ grid-area: 2 / 3 / 3 / 4; } 
+    &+a+a{ grid-area: 2 / 4 / 3 / 5; } 
+    &+a+a+a{ grid-area: 2 / 5 / 3 / 6; } 
+    &+a+a+a+a{ grid-area: 3 / 3 / 4 / 4; } 
+    &+a+a+a+a+a{ grid-area: 3 / 4 / 4 / 5; } 
+    &+a+a+a+a+a+a{ grid-area: 3 / 5 / 4 / 6; } 
+    /* &+section{ grid-area: 2 / 3 / 3 / 4; } 
     &+section+section{ grid-area: 2 / 4 / 3 / 5; } 
     &+section+section+section{ grid-area: 2 / 5 / 3 / 6; } 
     &+section+section+section+section{ grid-area: 3 / 3 / 4 / 4; } 
     &+section+section+section+section+section{ grid-area: 3 / 4 / 4 / 5; } 
-    &+section+section+section+section+section+section{ grid-area: 3 / 5 / 4 / 6; } 
+    &+section+section+section+section+section+section{ grid-area: 3 / 5 / 4 / 6; }  */
   }
-  
+`
+const ButtonLink = styled(Link) ` 
+  text-decoration: none;
+`
+const ButtonAnchorLink = styled(AnchorLink) ` 
+  text-decoration: none;
 `
 
 const AboutUs = () => {
@@ -90,12 +104,13 @@ const AboutUs = () => {
     <FlexWrapp className ="WrappAboutUs">
         <H1Header>Poznaj nas</H1Header>
 
-        <BackgroundButton className ="buttonAboutUs" Bg="fitness"/>
-        <BackgroundButton className ="buttonAboutUs" Bg="wellnes"/>
-        <BackgroundButton className ="buttonAboutUs" Bg="cosm"/>
-        <BackgroundButton className ="buttonAboutUs" Bg="suplementy"/>
-        <BackgroundButton className ="buttonAboutUs" Bg="cennik"/>
-        <BackgroundButton className ="buttonAboutUs" Bg="kontakt"/>
+        {/* <BackgroundButton as={Link} to="StacjeFitness" className ="buttonAboutUs" Bg="fitness"/> */}
+        <ButtonLink to="/StacjeFitness"> <BackgroundButton className ="buttonAboutUs" Bg="fitness"/> </ButtonLink>
+        <ButtonAnchorLink to="/StacjeFitness#scroll_wellnes"> <BackgroundButton className ="buttonAboutUs" Bg="wellnes"/> </ButtonAnchorLink>
+        <ButtonLink to="/StacjeCosm"> <BackgroundButton className ="buttonAboutUs" Bg="cosm"/> </ButtonLink>
+        <ButtonAnchorLink to="/Cennik#scroll_sup"> <BackgroundButton className ="buttonAboutUs" Bg="suplementy"/> </ButtonAnchorLink>
+        <ButtonLink to="/Cennik"> <BackgroundButton className ="buttonAboutUs" Bg="cennik"/> </ButtonLink>
+        <ButtonLink to="/Kontakt"> <BackgroundButton className ="buttonAboutUs" Bg="kontakt"/> </ButtonLink>
     </FlexWrapp>
 )
 }

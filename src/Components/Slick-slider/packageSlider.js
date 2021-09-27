@@ -15,6 +15,10 @@ import Slider from "react-slick";
 
 const Slider2 = styled(Slider)`
   width: 100%;
+  height: 38vh;
+${({theme})=>theme.media.tablet}{
+  height: 18vw;
+}
 
   .slick-prev:before,
   .slick-next:before
@@ -144,7 +148,7 @@ class PackageSlider extends Component{
               <th colSpan="4"> <h3>{PackageData.packageComposiion[this.state.activeSlide]} </h3></th>
             </tr>
             <TrGray>
-              <Th>Wejścia</Th><Th>Cena za zabieg</Th><ThPrice>Cena</ThPrice><Th>Cena pakietu </Th>
+              <Th>Wejścia</Th><Th>Cena za zabieg</Th><Th>Cena pakietu </Th>
             </TrGray>
           </thead>
    
@@ -157,13 +161,13 @@ class PackageSlider extends Component{
                 if ( i % 2 === 0 ) {
                   return (
                     <tr key={i}>
-                      <Th> {el} </Th><Td> {priceForSingleEntry} zł</Td><TdPrice>{ } zł</TdPrice><Td>{pricePackage} zł</Td>
+                      <Th> {el} </Th><Td> {priceForSingleEntry} zł</Td><Td>{pricePackage} zł</Td>
                     </tr>
                   )
                 }
                 else return(
                   <TrGray key={i}>
-                    <Th> {el} </Th><Td> {priceForSingleEntry} zł</Td><TdPrice>{ } zł</TdPrice><Td>{pricePackage} zł</Td>
+                    <Th> {el} </Th><Td> {priceForSingleEntry} zł</Td><Td>{pricePackage} zł</Td>
                   </TrGray>
                 )
                 

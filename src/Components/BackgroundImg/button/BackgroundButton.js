@@ -10,42 +10,42 @@ const BackgroundSection = ({ className, Bg }) => {
       query {
         cennik: file(relativePath: { eq: "cennik.jpg" }) {
           childImageSharp {
-            fluid(quality: 100, maxWidth: 1920) {
+            fluid(quality: 50, maxWidth: 1920) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
         fitness: file(relativePath: { eq: "Stacje_fitness.jpg" }) {
             childImageSharp {
-                fluid(quality: 100, maxWidth: 1920) {
+                fluid(quality: 50, maxWidth: 1920) {
                 ...GatsbyImageSharpFluid_withWebp
                 }
             }
         }
         kontakt: file(relativePath: { eq: "contact.jpg" }) {
             childImageSharp {
-                fluid(quality: 100, maxWidth: 1920) {
+                fluid(quality: 50, maxWidth: 1920) {
                 ...GatsbyImageSharpFluid_withWebp
                 }
             }
         }
         cosm: file(relativePath: { eq: "Stacje_kosmetologia_estetyczna.jpg" }) {
             childImageSharp {
-                fluid(quality: 100, maxWidth: 1920) {
+                fluid(quality: 50, maxWidth: 1920) {
                 ...GatsbyImageSharpFluid_withWebp
                 }
             }
         }
         suplementy: file(relativePath: { eq: "suplementy.jpg" }) {
             childImageSharp {
-                fluid(quality: 100, maxWidth: 1920) {
+                fluid(quality: 50, maxWidth: 1920) {
                 ...GatsbyImageSharpFluid_withWebp
                 }
             }
         }
         wellnes: file(relativePath: { eq: "indexRollShaper.jpg" }) {
             childImageSharp {
-                fluid(quality: 100, maxWidth: 1920) {
+                fluid(quality: 50, maxWidth: 1920) {
                 ...GatsbyImageSharpFluid_withWebp
                 }
             }
@@ -136,6 +136,7 @@ const CennikButtonBG = styled(BackgroundSection)`
   margin-bottom: 5%;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   background-repeat: no-repeat;
+  cursor: pointer;
 
   @media screen and (min-width: 650px) {
       width: 30vw;

@@ -28,6 +28,9 @@ const PhotoWrapp = styled.div `
     flex-flow: row;
   }
 
+  @media only screen and (orientation: landscape) {
+    flex-flow: row;
+ }
 ` 
 const Photo = styled.div ` 
   position: relative;
